@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbcwvgddtyaao"]
+
+[ext_resource type="PackedScene" uid="uid://cuqyvqf7dfx2c" path="res://building.tscn" id="1_xtcyn"]
+
+[node name="AttackableBuilding" instance=ExtResource("1_xtcyn")]
+modulate = Color(0.4, 1, 0.4, 1)

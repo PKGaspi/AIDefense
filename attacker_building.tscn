@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://chg7coetkxt7o"]
+
+[ext_resource type="PackedScene" uid="uid://cuqyvqf7dfx2c" path="res://building.tscn" id="1_qgxw3"]
+[ext_resource type="Script" path="res://turret.gd" id="2_ln3tu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gouo3"]
+radius = 182.26
+
+[node name="AttackerBuilding" instance=ExtResource("1_qgxw3")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.395, 0.395)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.5, 0)
+
+[node name="Turret" type="Area2D" parent="." index="2"]
+unique_name_in_owner = true
+script = ExtResource("2_ln3tu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turret" index="0"]
+shape = SubResource("CircleShape2D_gouo3")

@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq7op0wky50qe"]
+[gd_scene load_steps=5 format=3 uid="uid://bq7op0wky50qe"]
 
-[ext_resource type="PackedScene" uid="uid://cuqyvqf7dfx2c" path="res://building.tscn" id="1_irabp"]
 [ext_resource type="PackedScene" uid="uid://q3f8kcw2mqms" path="res://enemy.tscn" id="2_gqsv2"]
+[ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://heart_building.tscn" id="2_opr54"]
+[ext_resource type="PackedScene" uid="uid://chg7coetkxt7o" path="res://attacker_building.tscn" id="3_t1g3l"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p1vm2"]
 vertices = PackedVector2Array(374, 138, 374, 198, 246, 198, 202, 138, 202, 438, 246, 394, 374, 438, 282, 394, 282, 330, 294, 330, 294, 394, 330, 394, 374, 342, 330, 298, 782, 298, 714, 342, 782, 410, 714, 438, 846, 438, 846, 410)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(6, 7, 10), PackedInt32Array(6, 10, 11), PackedInt32Array(12, 6, 11, 13), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(15, 14, 16, 17), PackedInt32Array(18, 17, 16, 19)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(192, 128, 384, 128, 384, 208, 256, 208, 256, 384, 272, 384, 272, 320, 304, 320, 304, 384, 320, 384, 320, 288, 384, 288, 792, 288, 792, 400, 856, 400, 856, 448, 704, 448, 704, 352, 384, 352, 384, 448, 192, 448)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(192, 128, 384, 128, 384, 208, 256, 208, 256, 384, 272, 384, 272, 320, 304, 320, 304, 384, 320, 384, 320, 288, 792, 288, 792, 400, 856, 400, 856, 448, 704, 448, 704, 352, 384, 352, 384, 448, 192, 448)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Level" type="Node2D"]
@@ -14,17 +15,20 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_p1vm2")
 
-[node name="Building" parent="." instance=ExtResource("1_irabp")]
-position = Vector2(576, 320)
-
-[node name="Building" parent="Building" instance=ExtResource("1_irabp")]
-position = Vector2(280, 112)
-
 [node name="Enemy" parent="." instance=ExtResource("2_gqsv2")]
-position = Vector2(744, 344)
+position = Vector2(840, 424)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_gqsv2")]
 position = Vector2(288, 344)
 
 [node name="Enemy3" parent="." instance=ExtResource("2_gqsv2")]
 position = Vector2(352, 168)
+
+[node name="AttackableBuilding" parent="." instance=ExtResource("2_opr54")]
+position = Vector2(512, 320)
+
+[node name="AttackerBuilding" parent="." instance=ExtResource("3_t1g3l")]
+position = Vector2(408, 376)
+
+[node name="AttackerBuilding2" parent="." instance=ExtResource("3_t1g3l")]
+position = Vector2(616, 264)
