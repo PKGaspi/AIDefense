@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED: float = 200.0
+const SPEED: float = 250.0
 const DAMAGE: float = 100.0
 var target: Node2D
 

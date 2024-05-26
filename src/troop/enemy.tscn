@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://q3f8kcw2mqms"]
 
 [ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="1_iv13u"]
-[ext_resource type="Script" path="res://src/enemy.gd" id="1_recgt"]
+[ext_resource type="Script" path="res://src/troop/enemy.gd" id="1_recgt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dtlm"]
 
 [node name="Enemy" type="CharacterBody2D"]
 modulate = Color(1, 0.63, 0.63, 1)
+collision_mask = 2
 script = ExtResource("1_recgt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

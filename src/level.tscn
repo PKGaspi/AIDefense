@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq7op0wky50qe"]
+[gd_scene load_steps=7 format=3 uid="uid://bq7op0wky50qe"]
 
 [ext_resource type="Script" path="res://src/level.gd" id="1_3vw4e"]
-[ext_resource type="PackedScene" uid="uid://q3f8kcw2mqms" path="res://src/enemy.tscn" id="2_gqsv2"]
-[ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/heart_building.tscn" id="2_opr54"]
-[ext_resource type="PackedScene" uid="uid://chg7coetkxt7o" path="res://src/attacker_building.tscn" id="3_t1g3l"]
+[ext_resource type="PackedScene" uid="uid://q3f8kcw2mqms" path="res://src/troop/enemy.tscn" id="2_gqsv2"]
+[ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/building/heart_building.tscn" id="2_opr54"]
+[ext_resource type="PackedScene" uid="uid://chg7coetkxt7o" path="res://src/building/attacker_building.tscn" id="3_t1g3l"]
+[ext_resource type="PackedScene" uid="uid://wysevcu7btef" path="res://src/troop/troop_spawner.tscn" id="4_cusvt"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p1vm2"]
 vertices = PackedVector2Array(374, 138, 374, 198, 246, 198, 202, 138, 202, 438, 246, 394, 374, 438, 282, 394, 282, 330, 294, 330, 294, 394, 330, 394, 374, 342, 330, 298, 782, 298, 714, 342, 782, 410, 714, 438, 846, 438, 846, 410)
@@ -21,19 +22,31 @@ navigation_polygon = SubResource("NavigationPolygon_p1vm2")
 unique_name_in_owner = true
 
 [node name="Buildings" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="AttackableBuilding" parent="Buildings" instance=ExtResource("2_opr54")]
 position = Vector2(512, 320)
 collision_mask = 1
 
+[node name="AttackerBuilding3" parent="Buildings" instance=ExtResource("3_t1g3l")]
+position = Vector2(136, 264)
+collision_mask = 1
+
 [node name="AttackerBuilding" parent="Buildings" instance=ExtResource("3_t1g3l")]
-position = Vector2(298, 264)
+position = Vector2(413, 384)
 collision_mask = 1
 
 [node name="AttackerBuilding2" parent="Buildings" instance=ExtResource("3_t1g3l")]
 position = Vector2(616, 264)
 
+[node name="TroopSpawner2" parent="Buildings" instance=ExtResource("4_cusvt")]
+position = Vector2(840, 424)
+
+[node name="TroopSpawner" parent="Buildings" instance=ExtResource("4_cusvt")]
+position = Vector2(352, 168)
+
 [node name="Troops" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Enemy" parent="Troops" instance=ExtResource("2_gqsv2")]
 position = Vector2(840, 424)

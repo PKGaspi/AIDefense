@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const TARGET_GROUP = "EnemyTarget"
-const SPEED = 30.0
+const SPEED = 80.0
 @onready var navigation_agent: NavigationAgent2D = %NavigationAgent2D
 var target: Node2D
 var hp: float = 1000.0

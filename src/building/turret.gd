@@ -1,6 +1,6 @@
 extends Area2D
 
-var n_targets: int = 3
+var n_targets: int = 10
 var targets: Array[Node2D]
 var targets_in_range: Array[Node2D]
 var reload_time: float = .3
