@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Last AI Standing"
-run/main_scene="res://game_manager.tscn"
+run/main_scene="res://src/game_manager.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://global.gd"
+Global="*res://src/global.gd"
 
 [layer_names]
 
