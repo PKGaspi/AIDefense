@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://chg7coetkxt7o"]
+[gd_scene load_steps=5 format=3 uid="uid://chg7coetkxt7o"]
 
 [ext_resource type="PackedScene" uid="uid://cuqyvqf7dfx2c" path="res://building.tscn" id="1_qgxw3"]
 [ext_resource type="Script" path="res://turret.gd" id="2_ln3tu"]
+[ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://projectile.tscn" id="3_2m15o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gouo3"]
 radius = 182.26
@@ -16,7 +17,9 @@ position = Vector2(-0.5, 0)
 
 [node name="Turret" type="Area2D" parent="." index="2"]
 unique_name_in_owner = true
+collision_layer = 2
 script = ExtResource("2_ln3tu")
+projectile = ExtResource("3_2m15o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Turret" index="0"]
 shape = SubResource("CircleShape2D_gouo3")

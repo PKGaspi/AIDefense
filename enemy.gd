@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 const TARGET_GROUP = "EnemyTarget"
-const SPEED = 300.0
+const SPEED = 30.0
 @onready var navigation_agent: NavigationAgent2D = %NavigationAgent2D
 var target: Node2D
-
+var hp: float = 1000.0
 
 func _ready() -> void:
 	new_target()
@@ -28,3 +28,11 @@ func new_target() -> void:
 		return
 	navigation_agent.target_position = nearest_target.global_position
 	nearest_target.tree_exited.connect(new_target)
+
+func hit(damage: float) -> void:
+	hp -= damage
+	if hp <= 0:
+		die()
+
+func die() -> void:
+	queue_free()

@@ -14,3 +14,13 @@ config/name="Last AI Standing"
 run/main_scene="res://game_manager.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://global.gd"
+
+[layer_names]
+
+2d_physics/layer_1="Enemy"
+2d_physics/layer_2="Building"
+2d_physics/layer_3="Projectiles"
