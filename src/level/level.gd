@@ -10,8 +10,9 @@ signal currency_changed(currency: String, value: Variant)
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action("build"):
+	if event.is_action_pressed("build"):
 		build()
+		get_tree().root.set_input_as_handled()
 
 func get_currency(currency: String) -> void:
 	get(currency)
@@ -24,16 +25,17 @@ func increment_currency(currency: String, increment: Variant) -> void:
 	set_currency(currency, get(currency) + increment)
 
 func build() -> void:
-	var scene: PackedScene = get_selected_building_button()
-	if not is_instance_valid(scene):
+	var shop_item: ShopItem = get_selected_shop_item()
+	if not is_instance_valid(shop_item) or shop_item.cost > gold:
 		return
 	var global_pos = get_global_mouse_position()
-	var node: Node2D = scene.instantiate()
+	var node: Node2D = shop_item.item.instantiate()
 	node.global_position = global_pos
-	add_child(node)
+	building_layer.add_child(node)
+	gold -= shop_item.cost
 
-func get_selected_building_button() -> PackedScene:
-	var button: BaseButton = Global.game_manager.gui.building_button_group.get_pressed_button()
-	if not is_instance_of(button, BuildingButton):
+func get_selected_shop_item() -> ShopItem:
+	var button = Global.game_manager.gui.shop_button_group.get_pressed_button()
+	if not is_instance_valid(button):
 		return null
-	return button.scene
+	return button.shop_item

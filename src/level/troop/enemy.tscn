@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://q3f8kcw2mqms"]
 
-[ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="1_iv13u"]
-[ext_resource type="Script" path="res://src/troop/enemy.gd" id="1_recgt"]
-[ext_resource type="Script" path="res://src/building/turret.gd" id="3_4158q"]
-[ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/attacks/projectile.tscn" id="4_1uiw3"]
+[ext_resource type="Script" path="res://src/level/troop/enemy.gd" id="1_iwmp1"]
+[ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="2_6euen"]
+[ext_resource type="Script" path="res://src/level/building/turret.gd" id="3_vb4mq"]
+[ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="4_um4h8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dtlm"]
 
@@ -13,12 +13,12 @@ radius = 18.0278
 [node name="Enemy" type="CharacterBody2D"]
 modulate = Color(1, 0.63, 0.63, 1)
 collision_mask = 2
-script = ExtResource("1_recgt")
+script = ExtResource("1_iwmp1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-7.15256e-07, -5.96046e-08)
 scale = Vector2(0.15625, 0.21875)
-texture = ExtResource("1_iv13u")
+texture = ExtResource("2_6euen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4dtlm")
@@ -30,10 +30,10 @@ debug_enabled = true
 
 [node name="Turret" type="Area2D" parent="."]
 collision_mask = 2
-script = ExtResource("3_4158q")
+script = ExtResource("3_vb4mq")
 n_targets = 1
 reload_time = 2.0
-projectile = ExtResource("4_1uiw3")
+projectile = ExtResource("4_um4h8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Turret"]
 shape = SubResource("CircleShape2D_idx25")

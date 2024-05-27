@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ShopItem" load_steps=3 format=3 uid="uid://dhjdt4nqh6jna"]
+
+[ext_resource type="Script" path="res://src/gui/shop_item.gd" id="1_lphqo"]
+[ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/level/building/attackable_building.tscn" id="1_mwc5b"]
+
+[resource]
+script = ExtResource("1_lphqo")
+item = ExtResource("1_mwc5b")
+cost = 120.0

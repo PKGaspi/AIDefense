@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://7u80dv8qn1j0"]
 
-[ext_resource type="Script" path="res://src/attacks/projectile.gd" id="1_bv6nd"]
-[ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="2_ucpt5"]
+[ext_resource type="Script" path="res://src/level/attacks/projectile.gd" id="1_yexb6"]
+[ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="2_oqw41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a04rd"]
 size = Vector2(10, 2)
@@ -10,11 +10,11 @@ size = Vector2(10, 2)
 visibility_layer = 2
 z_index = 1
 collision_layer = 4
-script = ExtResource("1_bv6nd")
+script = ExtResource("1_yexb6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.234375, 0.109375)
-texture = ExtResource("2_ucpt5")
+texture = ExtResource("2_oqw41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_a04rd")
