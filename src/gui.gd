@@ -4,7 +4,7 @@ extends MarginContainer
 
 @onready var hp_bar: ProgressBar = %HPBar
 @onready var gold_label: Label = %GoldLabel
-
+@export var building_button_group: ButtonGroup
 
 func setup(level: Level) -> void:
 	var hear_building = level.get_node(level.heart_building)
@@ -22,4 +22,4 @@ func update_hp_bar(value: float) -> void:
 
 func _on_level_currency_change(currency: String, value: Variant) -> void:
 	if currency == 'gold':
-		gold_label.text = 'Gold: %s' % (value as int)
+		gold_label.text = 'Gold: %d' % value

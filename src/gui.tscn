@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsok1wefg8rfp"]
+[gd_scene load_steps=5 format=3 uid="uid://bsok1wefg8rfp"]
 
 [ext_resource type="Script" path="res://src/gui.gd" id="1_7ouo7"]
+[ext_resource type="ButtonGroup" uid="uid://dyvv7jplyr6rj" path="res://res/gui/buildings_button_group.tres" id="2_ejaqc"]
+[ext_resource type="Script" path="res://src/building_button.gd" id="3_ehd3j"]
+[ext_resource type="PackedScene" uid="uid://chg7coetkxt7o" path="res://src/building/attacker_building.tscn" id="4_yx4a2"]
 
 [node name="GUI" type="MarginContainer"]
 anchors_preset = 15
@@ -13,33 +16,65 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 script = ExtResource("1_7ouo7")
+building_button_group = ExtResource("2_ejaqc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="LeftPannel" type="VBoxContainer" parent="HBoxContainer"]
+[node name="LeftPanel" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPannel"]
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer/LeftPanel"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="CenterPannel" type="VBoxContainer" parent="HBoxContainer"]
+[node name="BuildingButtonPanel" type="VBoxContainer" parent="HBoxContainer/LeftPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Building1" type="Button" parent="HBoxContainer/LeftPanel/HBoxContainer/BuildingButtonPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+button_group = ExtResource("2_ejaqc")
+text = "Building 1"
+script = ExtResource("3_ehd3j")
+scene = ExtResource("4_yx4a2")
+
+[node name="Building2" type="Button" parent="HBoxContainer/LeftPanel/HBoxContainer/BuildingButtonPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+button_group = ExtResource("2_ejaqc")
+text = "Building 2"
+script = ExtResource("3_ehd3j")
+
+[node name="Building3" type="Button" parent="HBoxContainer/LeftPanel/HBoxContainer/BuildingButtonPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+button_group = ExtResource("2_ejaqc")
+text = "Building 3"
+script = ExtResource("3_ehd3j")
+
+[node name="CenterPanel" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HPBar" type="ProgressBar" parent="HBoxContainer/CenterPannel"]
+[node name="HPBar" type="ProgressBar" parent="HBoxContainer/CenterPanel"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="GoldLabel" type="Label" parent="HBoxContainer/CenterPannel"]
+[node name="GoldLabel" type="Label" parent="HBoxContainer/CenterPanel"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Gold: = %d
 "
 horizontal_alignment = 1
 
-[node name="RightPannel" type="VBoxContainer" parent="HBoxContainer"]
+[node name="RightPanel" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
