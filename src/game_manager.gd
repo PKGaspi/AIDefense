@@ -1,7 +1,6 @@
 class_name GameManager
 extends Node
 
-
 @export var init_level_scene: PackedScene
 @export var gui_scene: PackedScene
 var level: Level
@@ -26,4 +25,4 @@ func set_gui(value: PackedScene) -> void:
 	add_child(canvas_gui_layer)
 	gui = value.instantiate()
 	canvas_gui_layer.add_child(gui)
-	gui.setup(self)
+	gui.setup(level)

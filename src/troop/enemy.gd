@@ -6,6 +6,7 @@ const SPEED = 4000.0
 var target: Node2D
 var hp: float = 1000.0
 var damage: float = 125.0
+var gold: float = 25
 
 func _ready() -> void:
 	new_target()
@@ -36,4 +37,5 @@ func get_hit(damage_received: float) -> void:
 		die()
 
 func die() -> void:
+	Global.game_manager.level.increment_currency('gold', gold)
 	queue_free()
