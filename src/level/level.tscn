@@ -19,7 +19,6 @@ heart_building = NodePath("Buildings/AttackableBuilding")
 navigation_polygon = SubResource("NavigationPolygon_p1vm2")
 
 [node name="LevelCamera" type="Camera2D" parent="."]
-anchor_mode = 0
 script = ExtResource("2_gg4ir")
 
 [node name="Projectiles" type="Node2D" parent="."]
