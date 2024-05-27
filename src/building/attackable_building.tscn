@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbcwvgddtyaao"]
+[gd_scene load_steps=3 format=3 uid="uid://bbcwvgddtyaao"]
 
 [ext_resource type="PackedScene" uid="uid://cuqyvqf7dfx2c" path="res://src/building/building.tscn" id="1_xtcyn"]
+[ext_resource type="Script" path="res://src/building/attackable_building.gd" id="2_p2x2b"]
 
 [node name="AttackableBuilding" groups=["EnemyTarget"] instance=ExtResource("1_xtcyn")]
 modulate = Color(0.4, 1, 0.4, 1)
+script = ExtResource("2_p2x2b")

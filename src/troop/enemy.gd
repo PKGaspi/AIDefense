@@ -5,6 +5,7 @@ const SPEED = 80.0
 @onready var navigation_agent: NavigationAgent2D = %NavigationAgent2D
 var target: Node2D
 var hp: float = 1000.0
+var damage: float = 125.0
 
 func _ready() -> void:
 	new_target()
@@ -29,7 +30,7 @@ func new_target() -> void:
 	navigation_agent.target_position = nearest_target.global_position
 	nearest_target.tree_exited.connect(new_target)
 
-func hit(damage: float) -> void:
+func get_hit(damage: float) -> void:
 	hp -= damage
 	if hp <= 0:
 		die()

@@ -1,10 +1,12 @@
+class_name Turret
 extends Area2D
 
-var n_targets: int = 10
+@export var n_targets: int = 3
+@export var reload_time: float = .3
+
+var reload_timer: Timer
 var targets: Array[Node2D]
 var targets_in_range: Array[Node2D]
-var reload_time: float = .3
-var reload_timer: Timer
 
 @export var projectile: PackedScene
 
@@ -30,10 +32,10 @@ func can_shoot() -> bool:
 func shoot() -> void:
 	reload_timer.start()
 	for target in targets:
-		print("shoot!")
-		var p = projectile.instantiate()
+		var p: Area2D = projectile.instantiate()
 		p.target = target
 		p.global_position = global_position
+		p.collision_mask = collision_mask
 		Global.game_manager.level.projectile_layer.add_child(p)
 
 func remove_target(target: Node2D) -> void:

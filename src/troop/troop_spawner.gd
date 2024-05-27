@@ -1,6 +1,6 @@
 extends Marker2D
 
-var frequency: float = .45
+var frequency: float = .8
 var spawn_timer: Timer
 @export var to_spawn: PackedScene
 var quantity: int = 100
