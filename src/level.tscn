@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq7op0wky50qe"]
+[gd_scene load_steps=7 format=3 uid="uid://bq7op0wky50qe"]
 
 [ext_resource type="Script" path="res://src/level.gd" id="1_3vw4e"]
+[ext_resource type="Script" path="res://src/level_camera.gd" id="2_gg4ir"]
 [ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/building/attackable_building.tscn" id="2_opr54"]
 [ext_resource type="PackedScene" uid="uid://chg7coetkxt7o" path="res://src/building/attacker_building.tscn" id="3_t1g3l"]
 [ext_resource type="PackedScene" uid="uid://wysevcu7btef" path="res://src/troop/troop_spawner.tscn" id="4_cusvt"]
@@ -13,9 +14,13 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_3vw4e")
+heart_building = NodePath("Buildings/AttackableBuilding")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_p1vm2")
+
+[node name="LevelCamera" type="Camera2D" parent="."]
+script = ExtResource("2_gg4ir")
 
 [node name="Projectiles" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -27,6 +32,12 @@ unique_name_in_owner = true
 position = Vector2(512, 320)
 collision_layer = 2
 collision_mask = 1
+
+[node name="TroopSpawner2" parent="Buildings" instance=ExtResource("4_cusvt")]
+position = Vector2(840, 424)
+
+[node name="TroopSpawner" parent="Buildings" instance=ExtResource("4_cusvt")]
+position = Vector2(352, 168)
 
 [node name="AttackerBuilding3" parent="Buildings" instance=ExtResource("3_t1g3l")]
 position = Vector2(138, 256)
@@ -41,12 +52,6 @@ collision_mask = 1
 [node name="AttackerBuilding2" parent="Buildings" instance=ExtResource("3_t1g3l")]
 position = Vector2(618, 256)
 collision_layer = 2
-
-[node name="TroopSpawner2" parent="Buildings" instance=ExtResource("4_cusvt")]
-position = Vector2(840, 424)
-
-[node name="TroopSpawner" parent="Buildings" instance=ExtResource("4_cusvt")]
-position = Vector2(352, 168)
 
 [node name="Troops" type="Node2D" parent="."]
 unique_name_in_owner = true

@@ -26,7 +26,3 @@ func spawn() -> void:
 	if spawned_count >= quantity:
 		print("spawner end")
 		queue_free()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

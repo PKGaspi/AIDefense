@@ -22,7 +22,7 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if can_shoot():
 		shoot()
 
@@ -54,7 +54,7 @@ func next_target() -> void:
 	var target: Node2D = targets_in_range.pop_front()
 	if !is_instance_valid(target):
 		return
-	target.tree_exited.connect(_on_target_tree_exited)
+	target.tree_exited.connect(_on_target_tree_exited.bind(target))
 	targets.append(target)
 
 func _on_target_tree_exited(target: Node2D) -> void:
