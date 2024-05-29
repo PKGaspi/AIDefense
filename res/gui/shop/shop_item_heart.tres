@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="ShopItem" load_steps=3 format=3 uid="uid://cflo7kwhukbv8"]
+[gd_resource type="Resource" script_class="ShopItem" load_steps=3 format=3 uid="uid://dhjdt4nqh6jna"]
 
-[ext_resource type="PackedScene" uid="uid://chg7coetkxt7o" path="res://src/level/building/attacker_building.tscn" id="1_2s14l"]
+[ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/level/building/attackable_building.tscn" id="1_1am6i"]
 [ext_resource type="Script" path="res://src/gui/shop_item.gd" id="2_8xrsr"]
 
 [resource]
+resource_name = "Main Building"
 script = ExtResource("2_8xrsr")
-item = ExtResource("1_2s14l")
-cost = 30.0
+item = ExtResource("1_1am6i")
+cost = 120.0

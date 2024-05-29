@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsok1wefg8rfp"]
+[gd_scene load_steps=5 format=3 uid="uid://bsok1wefg8rfp"]
 
 [ext_resource type="Script" path="res://src/gui.gd" id="1_7ouo7"]
 [ext_resource type="ButtonGroup" uid="uid://dyvv7jplyr6rj" path="res://res/gui/shop_button_group.tres" id="2_3wyct"]
 [ext_resource type="Script" path="res://src/shop.gd" id="3_n1agj"]
+
+[sub_resource type="Theme" id="Theme_qd0lt"]
 
 [node name="GUI" type="MarginContainer"]
 anchors_preset = 15
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_qd0lt")
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10

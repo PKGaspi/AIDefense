@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShopItem" load_steps=3 format=3 uid="uid://brjid0yinfus0"]
+
+[ext_resource type="PackedScene" uid="uid://625deep8v53j" path="res://src/level/building/long_range_attacker_building.tscn" id="1_wabc7"]
+[ext_resource type="Script" path="res://src/gui/shop_item.gd" id="2_uqkak"]
+
+[resource]
+resource_name = "Advanced Turret"
+script = ExtResource("2_uqkak")
+item = ExtResource("1_wabc7")
+cost = 200.0

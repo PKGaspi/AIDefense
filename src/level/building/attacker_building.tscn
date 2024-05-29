@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="3_2m15o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gouo3"]
-radius = 182.26
+radius = 484.009
 
 [node name="AttackerBuilding" instance=ExtResource("1_qgxw3")]
 

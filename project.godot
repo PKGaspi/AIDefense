@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 Global="*res://src/global.gd"
 
+[display]
+
+window/size/viewport_width=256
+window/size/viewport_height=240
+window/stretch/mode="canvas_items"
+
 [input]
 
 drag={
@@ -44,6 +50,13 @@ build={
 
 [layer_names]
 
+2d_render/layer_1="Entities"
+2d_render/layer_2="Map"
 2d_physics/layer_1="Enemy"
 2d_physics/layer_2="Building"
 2d_physics/layer_3="Projectiles"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.0392157, 0.129412, 0.270588, 1)

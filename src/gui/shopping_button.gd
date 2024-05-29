@@ -7,4 +7,4 @@ func _ready() -> void:
 	setup_label()
 
 func setup_label() -> void:
-	text = '%s for %s' % [shop_item.item.resource_name, shop_item.cost]
+	text = '%s for %s' % [shop_item.resource_name, shop_item.cost]
