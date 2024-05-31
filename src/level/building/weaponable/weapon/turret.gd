@@ -12,6 +12,7 @@ var targets: Array[Node2D]
 var targets_in_range: Array[Node2D]
 
 @export var projectile: PackedScene
+@export var projectile_stats: ProjectileStats
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,6 +37,7 @@ func shoot() -> void:
 	reload_timer.start()
 	for target in targets:
 		var p: Area2D = projectile.instantiate()
+		p.stats = projectile_stats
 		p.target = target
 		p.global_position = global_position
 		p.collision_mask = collision_mask

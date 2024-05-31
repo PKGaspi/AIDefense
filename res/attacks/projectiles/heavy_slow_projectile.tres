@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ProjectileStats" load_steps=2 format=3 uid="uid://fyk2o5iucg1h"]
+
+[ext_resource type="Script" path="res://src/level/attacks/projectile_stats.gd" id="1_dsyax"]
+
+[resource]
+script = ExtResource("1_dsyax")
+damage = 550.0
+speed = 120.0

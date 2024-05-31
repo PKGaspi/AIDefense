@@ -1,8 +1,11 @@
-[gd_resource type="TileSet" load_steps=24 format=3 uid="uid://b470o175hk36h"]
+[gd_resource type="TileSet" load_steps=27 format=3 uid="uid://b470o175hk36h"]
 
 [ext_resource type="Texture2D" uid="uid://dvuhkbujkbrr2" path="res://assets/road_tileset.png" id="1_is75d"]
 [ext_resource type="Texture2D" uid="uid://bidaclls3kbf6" path="res://assets/building.png" id="2_a6dme"]
-[ext_resource type="PackedScene" uid="uid://bq0ajksi8ewoa" path="res://src/level/building/weaponable_building.tscn" id="3_buxm0"]
+[ext_resource type="PackedScene" uid="uid://bq0ajksi8ewoa" path="res://src/level/building/weaponable/weaponable_building_3.tscn" id="3_exw7i"]
+[ext_resource type="PackedScene" uid="uid://bj5ka36o5iw77" path="res://src/level/building/weaponable/weaponable_building_2.tscn" id="4_3xtfw"]
+[ext_resource type="PackedScene" uid="uid://b01n3xaojf4wk" path="res://src/level/building/weaponable/weaponable_building_4.tscn" id="5_j8jct"]
+[ext_resource type="PackedScene" uid="uid://bgdiylrxjwxmr" path="res://src/level/building/weaponable/weaponable_building_5.tscn" id="6_plvkl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ggb5e"]
 vertices = PackedVector2Array(8, -6, 8, 7, 6, 7, -7, -6, -7, 8, 6, 8)
@@ -248,7 +251,10 @@ texture = ExtResource("2_a6dme")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hpb7g"]
 resource_name = "Buildings"
-scenes/1/scene = ExtResource("3_buxm0")
+scenes/1/scene = ExtResource("3_exw7i")
+scenes/2/scene = ExtResource("4_3xtfw")
+scenes/3/scene = ExtResource("5_j8jct")
+scenes/4/scene = ExtResource("6_plvkl")
 
 [resource]
 terrain_set_0/mode = 2

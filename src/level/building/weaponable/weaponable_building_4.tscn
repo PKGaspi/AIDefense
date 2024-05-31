@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b01n3xaojf4wk"]
+
+[ext_resource type="PackedScene" uid="uid://bj5ka36o5iw77" path="res://src/level/building/weaponable/weaponable_building_2.tscn" id="1_3tuya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8j55"]
+size = Vector2(16, 56)
+
+[node name="WeaponableBuilding" instance=ExtResource("1_3tuya")]
+size = Vector2(1, 4)
+
+[node name="TileMap" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(-131072, 0, 1, -65536, 0, 1, 0, 0, 2, -196608, 0, 0)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_y8j55")

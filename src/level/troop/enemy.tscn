@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://q3f8kcw2mqms"]
+[gd_scene load_steps=8 format=3 uid="uid://q3f8kcw2mqms"]
 
 [ext_resource type="Script" path="res://src/level/troop/enemy.gd" id="1_iwmp1"]
 [ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="2_6euen"]
-[ext_resource type="Script" path="res://src/level/building/weapon/turret.gd" id="3_7blne"]
+[ext_resource type="Script" path="res://src/level/building/weaponable/weapon/turret.gd" id="3_0smqc"]
 [ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="4_um4h8"]
+[ext_resource type="Resource" uid="uid://dcgwaygdobbqb" path="res://res/attacks/projectiles/weak_agile_projectile.tres" id="5_wffnq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dtlm"]
 
@@ -29,10 +30,11 @@ path_postprocessing = 1
 
 [node name="Turret" type="Area2D" parent="."]
 collision_mask = 2
-script = ExtResource("3_7blne")
+script = ExtResource("3_0smqc")
 n_targets = 1
 reload_time = 2.0
 projectile = ExtResource("4_um4h8")
+projectile_stats = ExtResource("5_wffnq")
 
 [node name="Range" type="CollisionShape2D" parent="Turret"]
 unique_name_in_owner = true

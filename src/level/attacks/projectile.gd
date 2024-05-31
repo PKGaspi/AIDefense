@@ -1,7 +1,6 @@
 extends Area2D
 
-@export var speed: float = 250.0
-@export var damage: float = 150.0
+@export var stats: ProjectileStats
 var target: Node2D
 
 # Called when the node enters the scene tree for the first time.
@@ -16,11 +15,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction = global_position.direction_to(target.global_position).normalized()
 	global_rotation = direction.angle()
-	global_position += direction * speed * delta
+	global_position += direction * stats.speed * delta
 	
 func hit(body: Node2D) -> void:
 	if body.has_method('get_hit'):
-		body.get_hit(damage)
+		body.get_hit(stats.damage)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == target:

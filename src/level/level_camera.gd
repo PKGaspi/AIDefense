@@ -1,6 +1,8 @@
 class_name LevelCamera
 extends Camera2D
 
+@export var initial_zoom: Vector2 = Vector2(2, 2)
+
 var mouse_start_pos
 var screen_start_position
 
@@ -8,10 +10,11 @@ var dragging = false
 
 const ZOOM_STEP: Vector2 = Vector2(.1, .1)
 const ZOOM_MAX: Vector2 = Vector2(3, 3)
-const ZOOM_MIN: Vector2 = Vector2(.4, .4)
+const ZOOM_MIN: Vector2 = Vector2(.7, .7)
 
 func _ready() -> void:
-	global_position = get_tree().root.size / 2
+	zoom = initial_zoom
+	global_position = (get_tree().root.size / 2) / Vector2i(zoom)
 
 func _input(event) -> void:
 	# Source: https://forum.godotengine.org/t/how-to-drag-camera-with-mouse/28508/2
@@ -32,6 +35,6 @@ func _input(event) -> void:
 	
 func zoom_at_mouse(value: Vector2) -> void:
 	var mouse_pos_1: Vector2 = get_global_mouse_position()
-	zoom = clamp(value, ZOOM_MIN, ZOOM_MAX)
+	zoom = clamp(value, ZOOM_MIN * initial_zoom, ZOOM_MAX * initial_zoom)
 	var mouse_pos_2: Vector2 = get_global_mouse_position()
 	global_position += mouse_pos_1 - mouse_pos_2

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://chg7coetkxt7o"]
 
 [ext_resource type="PackedScene" uid="uid://cuqyvqf7dfx2c" path="res://src/level/building/collision_building.tscn" id="1_qgxw3"]
-[ext_resource type="Script" path="res://src/level/building/weapon/turret.gd" id="2_ln3tu"]
+[ext_resource type="Script" path="res://src/level/building/weaponable/weapon/turret.gd" id="2_ln3tu"]
 [ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="3_2m15o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gouo3"]

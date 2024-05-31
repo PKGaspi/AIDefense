@@ -15,9 +15,14 @@ _camera = NodePath("LevelCamera")
 visibility_layer = 2
 tile_set = ExtResource("2_wtbk8")
 format = 2
-layer_0/tile_data = PackedInt32Array(327679, 0, 3, 262144, 65536, 2, 262145, 65536, 2, 262146, 65536, 2, 262147, 65536, 0, 262148, 65536, 0, 262149, 262144, 2, 262150, 65536, 0, 262151, 65536, 2, 262152, 65536, 0, 262153, 65536, 0, 262154, 65536, 2, 262155, 65536, 0, 262156, 65536, 0, 262157, 65536, 2, 262158, 65536, 0, 262159, 65536, 2, 262160, 65536, 2, 262161, 65536, 2, 262162, 65536, 0, 262163, 65536, 3, 720899, 0, 1, 655363, 0, 0, 655364, 65536, 0, 655365, 65536, 2, 655366, 131072, 2, 589830, 0, 0, 589831, 131072, 2, 524295, 0, 1, 458759, 131072, 0, 458758, 65536, 2, 786435, 131072, 1, 851971, 0, 1, 917507, 131072, 1, 983043, 196608, 1, 393221, 0, 1, 327685, 131072, 1, 458757, 0, 2, 655368, 2, 65536, 786439, 2, 65536, 851972, 2, 65536, 786437, 2, 65536, 327683, 2, 65536, 458756, 2, 65536, 393223, 2, 65536, 524290, 2, 65536)
+layer_0/tile_data = PackedInt32Array(327679, 0, 3, 262144, 65536, 2, 262145, 65536, 2, 262146, 65536, 2, 262147, 65536, 0, 262148, 65536, 0, 262149, 262144, 2, 262150, 65536, 0, 262151, 65536, 2, 262152, 65536, 0, 262153, 65536, 0, 262154, 65536, 2, 262155, 65536, 0, 262156, 65536, 0, 262157, 65536, 2, 262158, 65536, 0, 262159, 65536, 2, 262160, 65536, 2, 262161, 65536, 2, 262162, 65536, 0, 262163, 65536, 3, 720899, 0, 1, 655363, 0, 0, 655364, 65536, 0, 655365, 65536, 2, 655366, 131072, 2, 589830, 0, 0, 589831, 131072, 2, 524295, 0, 1, 458759, 131072, 0, 458758, 65536, 2, 786435, 131072, 1, 851971, 0, 1, 917507, 131072, 1, 983043, 196608, 1, 393221, 0, 1, 327685, 131072, 1, 458757, 0, 2, 655368, 2, 65536, 786439, 2, 65536, 851972, 2, 65536, 327683, 2, 65536, 458756, 2, 65536, 393223, 2, 65536, 524294, 2, 65536, 589829, 2, 65536, 524297, 2, 131072, 720904, 2, 131072, 720898, 2, 196608, 786433, 2, 196608, 393218, 2, 262144, 393224, 2, 262144, 720902, 2, 131072, 589828, 2, 131072, 720901, 2, 131072, 851973, 2, 65536)
 
 [node name="LevelCamera" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 500
+limit_bottom = 220
+editor_draw_limits = true
 script = ExtResource("2_gg4ir")
 
 [node name="Projectiles" type="Node2D" parent="."]
@@ -39,3 +44,40 @@ position = Vector2(56, 248)
 
 [node name="Troops" type="Node2D" parent="."]
 unique_name_in_owner = true
+
+[connection signal="mouse_entered" from="TileMap/WeaponableBuilding" to="TileMap/WeaponableBuilding" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/WeaponableBuilding" to="TileMap/WeaponableBuilding" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92299" to="TileMap/@Area2D@92299" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92299" to="TileMap/@Area2D@92299" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92300" to="TileMap/@Area2D@92300" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92300" to="TileMap/@Area2D@92300" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92301" to="TileMap/@Area2D@92301" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92301" to="TileMap/@Area2D@92301" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92302" to="TileMap/@Area2D@92302" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92302" to="TileMap/@Area2D@92302" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92303" to="TileMap/@Area2D@92303" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92303" to="TileMap/@Area2D@92303" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92304" to="TileMap/@Area2D@92304" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92304" to="TileMap/@Area2D@92304" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92305" to="TileMap/@Area2D@92305" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92305" to="TileMap/@Area2D@92305" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92306" to="TileMap/@Area2D@92306" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92306" to="TileMap/@Area2D@92306" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92307" to="TileMap/@Area2D@92307" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92307" to="TileMap/@Area2D@92307" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92308" to="TileMap/@Area2D@92308" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92308" to="TileMap/@Area2D@92308" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92309" to="TileMap/@Area2D@92309" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92309" to="TileMap/@Area2D@92309" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92310" to="TileMap/@Area2D@92310" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92310" to="TileMap/@Area2D@92310" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92311" to="TileMap/@Area2D@92311" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92311" to="TileMap/@Area2D@92311" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92312" to="TileMap/@Area2D@92312" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92312" to="TileMap/@Area2D@92312" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92313" to="TileMap/@Area2D@92313" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92313" to="TileMap/@Area2D@92313" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92314" to="TileMap/@Area2D@92314" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92314" to="TileMap/@Area2D@92314" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TileMap/@Area2D@92315" to="TileMap/@Area2D@92315" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TileMap/@Area2D@92315" to="TileMap/@Area2D@92315" method="_on_mouse_exited"]

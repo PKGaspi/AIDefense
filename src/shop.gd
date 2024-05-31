@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends GridContainer
 
 func _ready():
 	parse_shop_items()

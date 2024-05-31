@@ -5,8 +5,6 @@
 [ext_resource type="Script" path="res://src/shop.gd" id="3_n1agj"]
 
 [sub_resource type="Theme" id="Theme_qd0lt"]
-default_font_size = 4
-Fonts/fonts/normal = null
 
 [node name="GUI" type="MarginContainer"]
 anchors_preset = 15
@@ -33,10 +31,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BuildingButtonPanel" type="VBoxContainer" parent="HBoxContainer/LeftPanel/HBoxContainer"]
+[node name="BuildingButtonPanel" type="GridContainer" parent="HBoxContainer/LeftPanel/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_vertical = 3
+columns = 5
 script = ExtResource("3_n1agj")
 
 [node name="CenterPanel" type="VBoxContainer" parent="HBoxContainer"]
