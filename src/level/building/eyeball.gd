@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var global_mouse_position: Vector2 = get_global_mouse_position()
 	var distance: float = global_position.distance_to(global_mouse_position)
 	position = global_position.direction_to(global_mouse_position) * lerp(Vector2.ZERO, movement_range, clamp((distance-distance_range.x)/distance_range.y, 0, 1))

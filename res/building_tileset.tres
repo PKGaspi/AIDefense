@@ -1,0 +1,25 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://2s3whteu1ilq"]
+
+[ext_resource type="Texture2D" uid="uid://bidaclls3kbf6" path="res://assets/building.png" id="1_utem6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vvgeg"]
+texture = ExtResource("1_utem6")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/terrains_peering_bit/top_side = 0
+
+[resource]
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "Building"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_vvgeg")

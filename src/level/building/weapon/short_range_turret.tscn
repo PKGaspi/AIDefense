@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmeilvkyf26t8"]
 
-[ext_resource type="Script" path="res://src/level/building/turret.gd" id="1_h0dot"]
+[ext_resource type="Script" path="res://src/level/building/weapon/turret.gd" id="1_6hbly"]
 [ext_resource type="Texture2D" uid="uid://cepphbcq6axp5" path="res://assets/turret.png" id="2_euok3"]
 [ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="2_tn4oj"]
 
@@ -8,12 +8,14 @@
 radius = 20.0
 
 [node name="Turret" type="Area2D"]
-script = ExtResource("1_h0dot")
-reload_time = 0.1
+script = ExtResource("1_6hbly")
+reload_time = 0.15
 projectile = ExtResource("2_tn4oj")
+
+[node name="Range" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_ps82p")
+debug_color = Color(0.388235, 0.388235, 0.317647, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_euok3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ps82p")

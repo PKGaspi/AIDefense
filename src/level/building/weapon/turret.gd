@@ -1,5 +1,8 @@
-class_name Turret
+class_name Weapon
 extends Area2D
+
+@onready var range: CollisionShape2D = %Range
+var draw_range: bool = false
 
 @export var n_targets: int = 3
 @export var reload_time: float = .3
@@ -69,3 +72,11 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	remove_target(body)
 
+func show_range(value: bool):
+	draw_range = value
+	queue_redraw()
+
+func _draw() -> void:
+	if draw_range:
+		#range.shape.draw(get_rid(), range.debug_color)
+		draw_circle(Vector2.ZERO, range.shape.radius, range.debug_color)

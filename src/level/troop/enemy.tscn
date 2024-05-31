@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/level/troop/enemy.gd" id="1_iwmp1"]
 [ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="2_6euen"]
-[ext_resource type="Script" path="res://src/level/building/turret.gd" id="3_vb4mq"]
+[ext_resource type="Script" path="res://src/level/building/weapon/turret.gd" id="3_7blne"]
 [ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="4_um4h8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dtlm"]
@@ -29,10 +29,11 @@ path_postprocessing = 1
 
 [node name="Turret" type="Area2D" parent="."]
 collision_mask = 2
-script = ExtResource("3_vb4mq")
+script = ExtResource("3_7blne")
 n_targets = 1
 reload_time = 2.0
 projectile = ExtResource("4_um4h8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Turret"]
+[node name="Range" type="CollisionShape2D" parent="Turret"]
+unique_name_in_owner = true
 shape = SubResource("CircleShape2D_idx25")

@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuqyvqf7dfx2c"]
 
-[ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="1_5xhd4"]
+[ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="1_00kt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p528p"]
-size = Vector2(51, 50)
+size = Vector2(32, 32)
 
-[node name="Building" type="StaticBody2D"]
+[node name="CollisionBuilding" type="StaticBody2D"]
 collision_layer = 0
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5xhd4")
+texture = ExtResource("1_00kt8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_p528p")

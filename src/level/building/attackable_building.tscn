@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bbcwvgddtyaao"]
 
-[ext_resource type="PackedScene" uid="uid://cuqyvqf7dfx2c" path="res://src/level/building/building.tscn" id="1_xtcyn"]
+[ext_resource type="PackedScene" uid="uid://cuqyvqf7dfx2c" path="res://src/level/building/collision_building.tscn" id="1_mybqs"]
 [ext_resource type="Script" path="res://src/level/building/attackable_building.gd" id="2_p2x2b"]
 [ext_resource type="Texture2D" uid="uid://xc7rg31j6ul" path="res://assets/heart_building.png" id="3_omx52"]
 [ext_resource type="Script" path="res://src/level/building/currency_generator.gd" id="3_vu4v4"]
@@ -57,7 +57,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AttackableBuilding" groups=["EnemyTarget"] instance=ExtResource("1_xtcyn")]
+[node name="AttackableBuilding" groups=["EnemyTarget"] instance=ExtResource("1_mybqs")]
 script = ExtResource("2_p2x2b")
 
 [node name="Sprite2D" parent="." index="0"]

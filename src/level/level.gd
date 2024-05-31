@@ -16,10 +16,6 @@ func _ready() -> void:
 	heart_building = get_node(_heart_building)
 	camera = get_node(_camera)
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_released("build"):
-		build()
-		get_tree().root.set_input_as_handled()
 
 func get_currency(currency: String) -> void:
 	get(currency)
