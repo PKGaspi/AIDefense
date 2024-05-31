@@ -1,3 +1,4 @@
+class_name LevelCamera
 extends Camera2D
 
 var mouse_start_pos
@@ -12,7 +13,7 @@ const ZOOM_MIN: Vector2 = Vector2(.4, .4)
 func _ready() -> void:
 	global_position = get_tree().root.size / 2
 
-func _input(event):
+func _input(event) -> void:
 	# Source: https://forum.godotengine.org/t/how-to-drag-camera-with-mouse/28508/2
 	if event.is_action("drag"):
 		if event.is_pressed():

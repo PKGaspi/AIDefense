@@ -27,12 +27,6 @@ func create_shop_button_from_file(res_path: String) -> void:
 	var shop_item = load(res_path) as ShopItem
 	if not is_instance_valid(shop_item):
 		return
-	create_shop_button(shop_item)
+	add_child(shop_item.create_shop_button())
 
-func create_shop_button(shop_item: ShopItem) -> void:
-	var button: ShoppingButton = ShoppingButton.new()
-	button.shop_item = shop_item
-	button.button_group = Global.game_manager.gui.shop_button_group
-	button.toggle_mode = true
-	add_child(button)
-	
+

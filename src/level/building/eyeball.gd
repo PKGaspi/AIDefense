@@ -13,5 +13,4 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var global_mouse_position: Vector2 = get_global_mouse_position()
 	var distance: float = global_position.distance_to(global_mouse_position)
-	print(lerp(Vector2.ZERO, movement_range, min(1, (distance-distance_range.x)/distance_range.y)))
 	position = global_position.direction_to(global_mouse_position) * lerp(Vector2.ZERO, movement_range, clamp((distance-distance_range.x)/distance_range.y, 0, 1))

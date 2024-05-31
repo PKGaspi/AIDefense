@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbcwvgddtyaao"]
+[gd_scene load_steps=15 format=3 uid="uid://bbcwvgddtyaao"]
 
 [ext_resource type="PackedScene" uid="uid://cuqyvqf7dfx2c" path="res://src/level/building/building.tscn" id="1_xtcyn"]
 [ext_resource type="Script" path="res://src/level/building/attackable_building.gd" id="2_p2x2b"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvrefswp65qy0" path="res://assets/eyeball.png" id="4_l1hho"]
 [ext_resource type="Script" path="res://src/level/building/eyeball.gd" id="5_i14hi"]
 [ext_resource type="Texture2D" uid="uid://bpqwnbm5samfn" path="res://assets/eye.png" id="6_0npri"]
+[ext_resource type="Script" path="res://src/level/building/eyeout.gd" id="7_svpco"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4feq"]
 atlas = ExtResource("6_0npri")
@@ -48,7 +49,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"blink",
-"speed": 15.0
+"speed": 25.0
 }, {
 "frames": [],
 "loop": false,
@@ -73,6 +74,7 @@ script = ExtResource("5_i14hi")
 sprite_frames = SubResource("SpriteFrames_uh8py")
 animation = &"blink"
 autoplay = "blink"
+script = ExtResource("7_svpco")
 
 [node name="CollisionShape2D" parent="." index="2"]
 visible = false

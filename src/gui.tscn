@@ -5,6 +5,8 @@
 [ext_resource type="Script" path="res://src/shop.gd" id="3_n1agj"]
 
 [sub_resource type="Theme" id="Theme_qd0lt"]
+default_font_size = 4
+Fonts/fonts/normal = null
 
 [node name="GUI" type="MarginContainer"]
 anchors_preset = 15

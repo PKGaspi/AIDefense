@@ -4,13 +4,20 @@ extends Node2D
 @onready var projectile_layer: Node2D = %Projectiles
 @onready var building_layer: Node2D = %Buildings
 @onready var troop_layer: Node2D = %Troops
-@export_node_path("StaticBody2D") var heart_building
+@export_node_path("StaticBody2D") var _heart_building
+var heart_building: StaticBody2D
+@export_node_path("LevelCamera") var _camera
+var camera: LevelCamera
+
 var gold: float = 100
 signal currency_changed(currency: String, value: Variant)
 
+func _ready() -> void:
+	heart_building = get_node(_heart_building)
+	camera = get_node(_camera)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("build"):
+	if event.is_action_released("build"):
 		build()
 		get_tree().root.set_input_as_handled()
 
