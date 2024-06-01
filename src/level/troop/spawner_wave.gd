@@ -3,6 +3,7 @@ extends Resource
 
 @export var troops: Array[PackedScene]
 @export var quantity: Array[int]
+@export var next_wave: SpawnerWave
 
 var index: int = 0
 var count: int = 0

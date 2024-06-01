@@ -16,8 +16,12 @@ var gold: float = 100
 signal currency_changed(currency: String, value: Variant)
 
 func _ready() -> void:
+	setup()
+
+func setup() -> void:
 	heart_building = get_node(_heart_building)
 	camera = get_node(_camera)
+	heart_building.tree_exited.connect(level_end.bind(false))
 	setup_spawners()
 
 func setup_spawners() -> void:
@@ -25,7 +29,7 @@ func setup_spawners() -> void:
 		spawner_count += 1
 		spawner.wave_finished.connect(_on_spawner_wave_finished)
 		spawner.finished.connect(_on_spawner_finished)
-		spawner.next_wave()
+		spawner.spawn() # Start this spawner
 
 func next_wave() -> void:
 	finished_waves = 0
@@ -67,4 +71,10 @@ func _on_spawner_wave_finished() -> void:
 func _on_spawner_finished() -> void:
 	spawner_count -= 1
 	if spawner_count == 0:
+		level_end(true)
+
+func level_end(victory: bool) -> void:
+	if victory:
 		print("Congratulations! You won!")
+	else:
+		print("Oh no, too bad!")
