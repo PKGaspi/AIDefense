@@ -1,6 +1,5 @@
 extends Marker2D
 
-var frequency: float = .8
 var spawn_timer: Timer
 @export var wave: SpawnerWave
 
@@ -11,7 +10,7 @@ signal finished()
 func _ready() -> void:
 	spawn_timer = Timer.new()
 	spawn_timer.name = "SpawnTimer"
-	spawn_timer.wait_time = frequency
+	spawn_timer.wait_time = wave.frequency
 	spawn_timer.autostart = false
 	spawn_timer.one_shot = true
 	spawn_timer.timeout.connect(spawn)
@@ -34,4 +33,5 @@ func next_wave() -> void:
 		finished.emit()
 		return # Null wave, this spawner is done for.
 	wave.reset()
+	spawn_timer.wait_time = wave.frequency
 	spawn_timer.start() # Spawn in next timeout again.

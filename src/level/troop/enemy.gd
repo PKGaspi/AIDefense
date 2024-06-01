@@ -1,21 +1,25 @@
 extends CharacterBody2D
 
 const TARGET_GROUP = "EnemyTarget"
-const SPEED = 4000.0
+
+@export var stats: EnemyStats
 @onready var navigation_agent: NavigationAgent2D = %NavigationAgent2D
+@onready var attack: Weapon = %Attack
+
 var target: Node2D
-var hp: float = 1000.0
-var damage: float = 125.0
-var gold: float = 25
+var hp: float
 
 func _ready() -> void:
+	hp = stats.max_hp
 	new_target()
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	if is_attacking():
+		return # Don't move and attack
 	var direction = (navigation_agent.get_next_path_position() - global_position).normalized()
-	velocity = direction * SPEED * delta
+	velocity = direction * stats.speed * delta
 	move_and_slide()
 
 func new_target() -> void:
@@ -37,5 +41,8 @@ func get_hit(damage_received: float) -> void:
 		die()
 
 func die() -> void:
-	Global.game_manager.level.increment_currency('gold', gold)
+	Global.game_manager.level.increment_currency('gold', stats.gold_drop)
 	queue_free()
+
+func is_attacking() -> bool:
+	return len(attack.targets) > 0

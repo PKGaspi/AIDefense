@@ -32,6 +32,11 @@ func setup_spawners() -> void:
 		spawner.spawn() # Start this spawner
 
 func next_wave() -> void:
+	if troop_layer.get_child_count() > 0:
+		# Wait until there are no troops left
+		await get_tree().physics_frame
+		next_wave.call_deferred()
+		return
 	finished_waves = 0
 	for spawner in spawner_layer.get_children():
 		spawner.next_wave()

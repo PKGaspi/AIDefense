@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfmm6jrm2dl1f"]
+
+[ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="1_i8gd3"]
+
+[node name="MeleeAttack" instance=ExtResource("1_i8gd3")]
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false

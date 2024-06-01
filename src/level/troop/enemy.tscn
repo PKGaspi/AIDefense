@@ -1,25 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://q3f8kcw2mqms"]
+[gd_scene load_steps=10 format=3 uid="uid://q3f8kcw2mqms"]
 
 [ext_resource type="Script" path="res://src/level/troop/enemy.gd" id="1_iwmp1"]
-[ext_resource type="Texture2D" uid="uid://b8y53ueqph8fq" path="res://icon.svg" id="2_6euen"]
+[ext_resource type="Script" path="res://src/level/troop/enemy_stats.gd" id="2_530pi"]
+[ext_resource type="Texture2D" uid="uid://c5t6arunjis70" path="res://assets/troop_1.png" id="2_nlw70"]
 [ext_resource type="Script" path="res://src/level/building/weaponable/weapon/turret.gd" id="3_0smqc"]
-[ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="4_um4h8"]
-[ext_resource type="Resource" uid="uid://dcgwaygdobbqb" path="res://res/attacks/projectiles/weak_agile_projectile.tres" id="5_wffnq"]
+[ext_resource type="PackedScene" uid="uid://bfmm6jrm2dl1f" path="res://src/level/attacks/melee_attack.tscn" id="4_x7imp"]
+[ext_resource type="Resource" uid="uid://c3628uk0lexbx" path="res://res/attacks/melee_projectile.tres" id="5_s334x"]
+
+[sub_resource type="Resource" id="Resource_8k1fc"]
+script = ExtResource("2_530pi")
+max_hp = 1000.0
+speed = 550.0
+gold_drop = 10.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dtlm"]
+radius = 4.0
+height = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_idx25"]
-radius = 18.0278
+radius = 11.0454
 
 [node name="Enemy" type="CharacterBody2D"]
-modulate = Color(1, 0.63, 0.63, 1)
 collision_mask = 2
 script = ExtResource("1_iwmp1")
+stats = SubResource("Resource_8k1fc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-7.15256e-07, -5.96046e-08)
-scale = Vector2(0.15625, 0.21875)
-texture = ExtResource("2_6euen")
+texture = ExtResource("2_nlw70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4dtlm")
@@ -28,14 +36,15 @@ shape = SubResource("CapsuleShape2D_4dtlm")
 unique_name_in_owner = true
 path_postprocessing = 1
 
-[node name="Turret" type="Area2D" parent="."]
+[node name="Attack" type="Area2D" parent="."]
+unique_name_in_owner = true
 collision_mask = 2
 script = ExtResource("3_0smqc")
 n_targets = 1
 reload_time = 2.0
-projectile = ExtResource("4_um4h8")
-projectile_stats = ExtResource("5_wffnq")
+projectile = ExtResource("4_x7imp")
+projectile_stats = ExtResource("5_s334x")
 
-[node name="Range" type="CollisionShape2D" parent="Turret"]
+[node name="Range" type="CollisionShape2D" parent="Attack"]
 unique_name_in_owner = true
 shape = SubResource("CircleShape2D_idx25")
