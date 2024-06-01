@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://wysevcu7btef"]
+[gd_scene load_steps=2 format=3 uid="uid://wysevcu7btef"]
 
 [ext_resource type="Script" path="res://src/level/troop/troop_spawner.gd" id="1_pc6qe"]
-[ext_resource type="PackedScene" uid="uid://q3f8kcw2mqms" path="res://src/level/troop/enemy.tscn" id="2_rxjlp"]
 
 [node name="TroopSpawner" type="Marker2D"]
 script = ExtResource("1_pc6qe")
-to_spawn = ExtResource("2_rxjlp")

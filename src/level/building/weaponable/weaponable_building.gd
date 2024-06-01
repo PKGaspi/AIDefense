@@ -14,7 +14,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if selected and event.is_action_released("build"):
 		var built = build()
-		if build:
+		if built:
 			get_tree().root.set_input_as_handled()
 
 func set_selected(value: bool) -> void:

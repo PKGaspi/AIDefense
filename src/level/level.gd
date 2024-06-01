@@ -4,10 +4,13 @@ extends Node2D
 @onready var projectile_layer: Node2D = %Projectiles
 @onready var building_layer: Node2D = %Buildings
 @onready var troop_layer: Node2D = %Troops
+@onready var spawner_layer: Node2D = %Spawners
 @export_node_path("StaticBody2D") var _heart_building
 var heart_building: StaticBody2D
 @export_node_path("LevelCamera") var _camera
 var camera: LevelCamera
+var spawner_count: int = 0
+var finished_waves: int = 0
 
 var gold: float = 100
 signal currency_changed(currency: String, value: Variant)
@@ -15,6 +18,19 @@ signal currency_changed(currency: String, value: Variant)
 func _ready() -> void:
 	heart_building = get_node(_heart_building)
 	camera = get_node(_camera)
+	setup_spawners()
+
+func setup_spawners() -> void:
+	for spawner in spawner_layer.get_children():
+		spawner_count += 1
+		spawner.wave_finished.connect(_on_spawner_wave_finished)
+		spawner.finished.connect(_on_spawner_finished)
+		spawner.next_wave()
+
+func next_wave() -> void:
+	finished_waves = 0
+	for spawner in spawner_layer.get_children():
+		spawner.next_wave()
 
 
 func get_currency(currency: String) -> void:
@@ -42,3 +58,13 @@ func get_selected_shop_item() -> ShopItem:
 	if not is_instance_valid(button):
 		return null
 	return button.shop_item
+
+func _on_spawner_wave_finished() -> void:
+	finished_waves += 1
+	if finished_waves >= spawner_count:
+		next_wave()
+
+func _on_spawner_finished() -> void:
+	spawner_count -= 1
+	if spawner_count == 0:
+		print("Congratulations! You won!")

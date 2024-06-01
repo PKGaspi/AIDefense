@@ -1,7 +1,7 @@
 class_name Weapon
 extends Area2D
 
-@onready var range: CollisionShape2D = %Range
+@onready var shoot_range: CollisionShape2D = %Range
 var draw_range: bool = false
 
 @export var n_targets: int = 3
@@ -81,4 +81,4 @@ func show_range(value: bool):
 func _draw() -> void:
 	if draw_range:
 		#range.shape.draw(get_rid(), range.debug_color)
-		draw_circle(Vector2.ZERO, range.shape.radius, range.debug_color)
+		draw_circle(Vector2.ZERO, shoot_range.shape.radius, shoot_range.debug_color)
