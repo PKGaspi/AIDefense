@@ -8,9 +8,9 @@ var screen_start_position
 
 var dragging = false
 
-const ZOOM_STEP: Vector2 = Vector2(.1, .1)
-const ZOOM_MAX: Vector2 = Vector2(3, 3)
-const ZOOM_MIN: Vector2 = Vector2(.7, .7)
+var ZOOM_STEP: Vector2 = Vector2(.4, .4)
+var ZOOM_MAX: Vector2 = Vector2(5, 5)
+@onready var ZOOM_MIN: Vector2 = initial_zoom
 
 func _ready() -> void:
 	zoom = initial_zoom
@@ -35,6 +35,6 @@ func _input(event) -> void:
 	
 func zoom_at_mouse(value: Vector2) -> void:
 	var mouse_pos_1: Vector2 = get_global_mouse_position()
-	zoom = clamp(value, ZOOM_MIN * initial_zoom, ZOOM_MAX * initial_zoom)
+	zoom = clamp(value, ZOOM_MIN, ZOOM_MAX)
 	var mouse_pos_2: Vector2 = get_global_mouse_position()
 	global_position += mouse_pos_1 - mouse_pos_2

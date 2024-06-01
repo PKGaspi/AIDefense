@@ -26,10 +26,12 @@ func setup() -> void:
 
 func setup_spawners() -> void:
 	for spawner in spawner_layer.get_children():
+		if not is_instance_valid(spawner.wave):
+			continue
 		spawner_count += 1
 		spawner.wave_finished.connect(_on_spawner_wave_finished)
 		spawner.finished.connect(_on_spawner_finished)
-		spawner.spawn() # Start this spawner
+		spawner.start() # Start this spawner
 
 func next_wave() -> void:
 	if troop_layer.get_child_count() > 0:

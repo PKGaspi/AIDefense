@@ -10,11 +10,17 @@ signal finished()
 func _ready() -> void:
 	spawn_timer = Timer.new()
 	spawn_timer.name = "SpawnTimer"
-	spawn_timer.wait_time = wave.frequency
 	spawn_timer.autostart = false
 	spawn_timer.one_shot = true
 	spawn_timer.timeout.connect(spawn)
 	add_child(spawn_timer)
+	
+func start() -> void:
+	if not is_instance_valid(wave):
+		return
+	spawn_timer.wait_time = wave.frequency
+	spawn()
+	
 
 
 func spawn() -> void:
@@ -28,10 +34,10 @@ func spawn() -> void:
 	spawn_timer.start() # Spawn in next timeout again.
 
 func next_wave() -> void:
-	wave = wave.next_wave
-	if not is_instance_valid(wave):
+	if not is_instance_valid(wave) or not is_instance_valid(wave.next_wave):
 		finished.emit()
 		return # Null wave, this spawner is done for.
+	wave = wave.next_wave
 	wave.reset()
 	spawn_timer.wait_time = wave.frequency
 	spawn_timer.start() # Spawn in next timeout again.

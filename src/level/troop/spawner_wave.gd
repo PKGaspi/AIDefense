@@ -6,8 +6,12 @@ extends Resource
 @export var frequency: float = 1
 @export var next_wave: SpawnerWave
 
+
 var index: int = 0
 var count: int = 0
+
+func _init() -> void:
+	resource_local_to_scene = true
 
 func next_troop() -> PackedScene:
 	if index >= len(troops):
