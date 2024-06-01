@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbk4ac0b3wfhr"]
+
+[ext_resource type="Script" path="res://src/gui/level_loader_button.gd" id="1_6agp4"]
+[ext_resource type="PackedScene" uid="uid://bq7op0wky50qe" path="res://src/level/level.tscn" id="2_hoc0h"]
+[ext_resource type="Script" path="res://src/gui/exit_button.gd" id="3_fh8vv"]
+
+[node name="TitleMenu" type="VBoxContainer"]
+offset_right = 57.0
+offset_bottom = 119.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "AI
+Defend"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "Play"
+script = ExtResource("1_6agp4")
+level_scene = ExtResource("2_hoc0h")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+text = "Exit"
+script = ExtResource("3_fh8vv")

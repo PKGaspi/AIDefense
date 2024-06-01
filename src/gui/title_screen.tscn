@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfw05vjji21vn"]
+
+[ext_resource type="PackedScene" uid="uid://cnot4xpf64imo" path="res://src/game_manager.tscn" id="1_veggo"]
+[ext_resource type="PackedScene" uid="uid://cbk4ac0b3wfhr" path="res://src/gui/title_menu.tscn" id="2_gt7p5"]
+
+[node name="GameManager" instance=ExtResource("1_veggo")]
+init_level_scene = null
+
+[node name="TitleMenu" parent="InterfaceCanvasLayer" index="0" instance=ExtResource("2_gt7p5")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -59.5
+offset_right = 28.5
+offset_bottom = 59.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4

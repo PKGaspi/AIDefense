@@ -5,6 +5,7 @@ extends Node
 @export var gui_scene: PackedScene
 var level: Level
 var gui: GUI
+@onready var interface_canvas_layer: CanvasLayer = %InterfaceCanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,9 +21,8 @@ func set_level(value: PackedScene) -> void:
 		set_gui(gui_scene)
 
 func set_gui(value: PackedScene) -> void:
-	var canvas_gui_layer: CanvasLayer = CanvasLayer.new()
-	canvas_gui_layer.name = "CanvasGUILayer"
-	add_child(canvas_gui_layer)
+	for node in interface_canvas_layer.get_children():
+		node.queue_free()
 	gui = value.instantiate()
-	canvas_gui_layer.add_child(gui)
+	interface_canvas_layer.add_child(gui)
 	gui.setup(level)
