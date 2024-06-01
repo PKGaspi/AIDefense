@@ -103,4 +103,6 @@ func add_notification(message: String, duration: float = 10) -> void:
 
 func add_wave_notification() -> void:
 	var message: String = "Wave %s of %s" % [wave + 1, wave_count]
+	if wave+1 == wave_count:
+		message = "Last Wave!"
 	add_notification(message)
