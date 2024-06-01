@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsok1wefg8rfp"]
+[gd_scene load_steps=6 format=3 uid="uid://bsok1wefg8rfp"]
 
 [ext_resource type="Script" path="res://src/gui.gd" id="1_7ouo7"]
 [ext_resource type="ButtonGroup" uid="uid://dyvv7jplyr6rj" path="res://res/gui/shop_button_group.tres" id="2_3wyct"]
 [ext_resource type="Script" path="res://src/shop.gd" id="3_n1agj"]
+[ext_resource type="Script" path="res://src/notifications_panel.gd" id="4_3oisu"]
 
 [sub_resource type="Theme" id="Theme_qd0lt"]
 
@@ -56,3 +57,8 @@ horizontal_alignment = 1
 [node name="RightPanel" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="NotificationsPannel" type="VBoxContainer" parent="HBoxContainer/RightPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("4_3oisu")

@@ -19,6 +19,8 @@ func set_level(value: PackedScene) -> void:
 	add_child(level)
 	if is_instance_valid(gui_scene):
 		set_gui(gui_scene)
+	level.gui = gui
+	level.start()
 
 func set_gui(value: PackedScene) -> void:
 	for node in interface_canvas_layer.get_children():

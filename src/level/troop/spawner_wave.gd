@@ -27,3 +27,8 @@ func next_troop() -> PackedScene:
 func reset() -> void:
 	index = 0
 	count = 0
+
+func get_wave_count() -> int:
+	if not is_instance_valid(next_wave):
+		return 1
+	return next_wave.get_wave_count() + 1

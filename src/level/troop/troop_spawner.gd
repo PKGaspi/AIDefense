@@ -16,11 +16,18 @@ func _ready() -> void:
 	add_child(spawn_timer)
 	
 func start() -> void:
+	set_wave(wave)
+
+func set_wave(value: SpawnerWave) -> void:
+	wave = value
 	if not is_instance_valid(wave):
+		finished.emit()
+		queue_free()
 		return
+	wave.reset()
 	spawn_timer.wait_time = wave.frequency
-	spawn()
-	
+	spawn_timer.start() # Spawn in next timeout again.
+
 
 
 func spawn() -> void:
@@ -34,10 +41,9 @@ func spawn() -> void:
 	spawn_timer.start() # Spawn in next timeout again.
 
 func next_wave() -> void:
-	if not is_instance_valid(wave) or not is_instance_valid(wave.next_wave):
-		finished.emit()
-		return # Null wave, this spawner is done for.
-	wave = wave.next_wave
-	wave.reset()
-	spawn_timer.wait_time = wave.frequency
-	spawn_timer.start() # Spawn in next timeout again.
+	set_wave(wave.next_wave)
+
+func get_wave_count() -> int:
+	if not is_instance_valid(wave):
+		return 0
+	return wave.get_wave_count()
