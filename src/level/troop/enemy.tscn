@@ -7,24 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://bfmm6jrm2dl1f" path="res://src/level/attacks/melee_attack.tscn" id="4_x7imp"]
 [ext_resource type="Resource" uid="uid://c3628uk0lexbx" path="res://res/attacks/melee_projectile.tres" id="5_s334x"]
 
-[sub_resource type="Resource" id="Resource_8k1fc"]
+[sub_resource type="Resource" id="Resource_haebb"]
 script = ExtResource("2_530pi")
 max_hp = 1000.0
 speed = 550.0
-gold_drop = 10.0
+gold_drop = 5.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dtlm"]
-radius = 4.0
-height = 12.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_idx25"]
 radius = 7.0
+height = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nv1lf"]
+radius = 12.0
 
 [node name="Enemy" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 2
 script = ExtResource("1_iwmp1")
-stats = SubResource("Resource_8k1fc")
+stats = SubResource("Resource_haebb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-7.15256e-07, -5.96046e-08)
@@ -49,4 +49,4 @@ projectile_stats = ExtResource("5_s334x")
 
 [node name="Range" type="CollisionShape2D" parent="Attack"]
 unique_name_in_owner = true
-shape = SubResource("CircleShape2D_idx25")
+shape = SubResource("CircleShape2D_nv1lf")

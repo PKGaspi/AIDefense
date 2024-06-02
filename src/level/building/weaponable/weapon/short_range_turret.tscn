@@ -9,8 +9,10 @@
 radius = 20.0
 
 [node name="Turret" type="Area2D"]
+z_index = 1
 script = ExtResource("1_j13js")
-reload_time = 0.15
+n_targets = 1
+reload_time = 0.2
 projectile = ExtResource("2_1n0ce")
 projectile_stats = ExtResource("3_86mx5")
 

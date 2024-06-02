@@ -3,5 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="1_lhbjm"]
 
 [node name="HugeProjectile" instance=ExtResource("1_lhbjm")]
-speed = 120.0
-damage = 2000.0
