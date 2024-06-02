@@ -12,8 +12,8 @@ var gui: GUI
 @onready var troop_layer: Node2D = %Troops
 @onready var spawner_layer: Node2D = %Spawners
 
-@export_node_path("StaticBody2D") var _heart_building
-var heart_building: StaticBody2D
+@export_node_path("AttackableBuilding") var _heart_building
+var heart_building: AttackableBuilding
 @export_node_path("LevelCamera") var _camera
 var camera: LevelCamera
 
@@ -38,7 +38,7 @@ func _input(event: InputEvent) -> void:
 
 func start() -> void:
 	await add_notification("Level Start!", 3)
-	heart_building.tree_exited.connect(level_end.bind(false))
+	heart_building.destroyed.connect(level_end.bind(false))
 	setup_spawners()
 	add_wave_notification()
 
