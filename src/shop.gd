@@ -24,6 +24,8 @@ func parse_shop_items() -> void:
 
 
 func create_shop_button_from_file(res_path: String) -> void:
+	if '.tres.remap' in res_path:
+		res_path = res_path.trim_suffix('.remap')
 	var shop_item = load(res_path) as ShopItem
 	if not is_instance_valid(shop_item):
 		return
