@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxydxr7qujrkj"]
+
+[ext_resource type="Script" path="res://src/level/level.gd" id="1_88cvu"]
+[ext_resource type="TileSet" uid="uid://b470o175hk36h" path="res://res/level_tileset.tres" id="2_k8r6k"]
+[ext_resource type="PackedScene" uid="uid://bsok1wefg8rfp" path="res://src/gui.tscn" id="2_mok7m"]
+[ext_resource type="Script" path="res://src/level/level_camera.gd" id="3_rnqni"]
+[ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/level/building/attackable_building.tscn" id="4_n0ycq"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_88cvu")
+gui_scene = ExtResource("2_mok7m")
+_heart_building = NodePath("Buildings/AttackableBuilding")
+_camera = NodePath("LevelCamera")
+
+[node name="TileMap" type="TileMap" parent="."]
+visibility_layer = 2
+y_sort_enabled = true
+tile_set = ExtResource("2_k8r6k")
+format = 2
+layer_0/name = "Roads"
+layer_1/name = "Buildings"
+layer_1/y_sort_enabled = true
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array()
+
+[node name="LevelCamera" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 500
+limit_bottom = 220
+editor_draw_limits = true
+script = ExtResource("3_rnqni")
+initial_zoom = Vector2(2.5, 2.5)
+
+[node name="Projectiles" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Buildings" type="Node2D" parent="."]
+unique_name_in_owner = true
+z_index = 1
+
+[node name="AttackableBuilding" parent="Buildings" instance=ExtResource("4_n0ycq")]
+position = Vector2(296, 72)
+collision_layer = 2
+collision_mask = 1
+
+[node name="Troops" type="Node2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Spawners" type="Node2D" parent="."]
+unique_name_in_owner = true

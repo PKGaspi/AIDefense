@@ -33,7 +33,6 @@ size_flags_vertical = 3
 
 [node name="BuildingButtonPanel" type="GridContainer" parent="HBoxContainer/LeftPanel/HBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 columns = 5
 script = ExtResource("3_n1agj")
 

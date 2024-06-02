@@ -2,7 +2,6 @@ class_name GameManager
 extends Node
 
 @export var init_level_scene: PackedScene
-@export var gui_scene: PackedScene
 var level: Level
 var gui: GUI
 @onready var interface_canvas_layer: CanvasLayer = %InterfaceCanvasLayer
@@ -17,8 +16,8 @@ func set_level(value: PackedScene) -> void:
 		level.queue_free()
 	level = value.instantiate() as Level
 	add_child(level)
-	if is_instance_valid(gui_scene):
-		set_gui(gui_scene)
+	if is_instance_valid(level.gui_scene):
+		set_gui(level.gui_scene)
 	level.gui = gui
 	level.start()
 

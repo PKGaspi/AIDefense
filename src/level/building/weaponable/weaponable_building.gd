@@ -39,7 +39,7 @@ func build() -> bool:
 	if not is_instance_valid(shop_item) or level.gold < shop_item.cost:
 		return false
 	
-	level.gold -= shop_item.cost
+	level.increment_currency('gold', -shop_item.cost)
 	var tileset_cell_size: Vector2 = Vector2(16, 16) # TODO: Get from tileset!
 	var weapon_size: Vector2 = tileset_cell_size * 1 # TODO: Get from somewhere else!
 	weapon = shop_item.item.instantiate()

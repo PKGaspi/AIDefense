@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://df06kjs51r7gd"]
+
+[ext_resource type="PackedScene" uid="uid://dxydxr7qujrkj" path="res://src/level/level_base.tscn" id="1_tphma"]
+[ext_resource type="PackedScene" uid="uid://je3ujydormnc" path="res://src/level/gui_tutorial.tscn" id="2_ncuis"]
+[ext_resource type="PackedScene" uid="uid://wysevcu7btef" path="res://src/level/troop/troop_spawner.tscn" id="3_xvabc"]
+[ext_resource type="Script" path="res://src/level/troop/spawner_wave.gd" id="4_teqxe"]
+[ext_resource type="PackedScene" uid="uid://q3f8kcw2mqms" path="res://src/level/troop/enemy.tscn" id="5_2x0np"]
+
+[sub_resource type="Resource" id="Resource_wpimb"]
+script = ExtResource("4_teqxe")
+troops = Array[PackedScene]([ExtResource("5_2x0np")])
+quantity = Array[int]([10000])
+frequency = 1.5
+
+[node name="LevelTutorial" instance=ExtResource("1_tphma")]
+gui_scene = ExtResource("2_ncuis")
+initial_gold = 250.0
+
+[node name="TileMap" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(458755, 131072, 0, 524291, 0, 1, 589827, 131072, 1, 655363, 131072, 1, 524284, 0, 3, 917500, 0, 3, 524285, 65536, 2, 917501, 65536, 2, 524286, 65536, 2, 917502, 65536, 0, 524287, 65536, 2, 917503, 65536, 2, 458752, 65536, 0, 851968, 65536, 2, 458753, 65536, 0, 851969, 65536, 2, 458754, 65536, 0, 851970, 65536, 0, 720899, 131072, 1, 786435, 131072, 1, 851971, 131072, 2)
+layer_1/tile_data = PackedInt32Array(524289, 2, 65536, 917506, 2, 196608, 720900, 2, 65536)
+
+[node name="LevelCamera" parent="." index="1"]
+process_mode = 4
+initial_zoom = Vector2(2, 2)
+
+[node name="AttackableBuilding" parent="Buildings" index="0"]
+position = Vector2(-72, 216)
+
+[node name="CurrencyGenerator" parent="Buildings/AttackableBuilding" index="3"]
+script = null
+
+[node name="TroopSpawner" parent="Spawners" index="0" instance=ExtResource("3_xvabc")]
+position = Vector2(-24, 72)
+wave = SubResource("Resource_wpimb")
+
+[editable path="Buildings/AttackableBuilding"]

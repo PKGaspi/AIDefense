@@ -1,6 +1,7 @@
 class_name Level
 extends Node2D
 
+@export var gui_scene: PackedScene 
 var gui: GUI
 
 @onready var projectile_layer: Node2D = %Projectiles
@@ -19,7 +20,8 @@ var finished_waves: int = 0
 var finished_spawners: int = 0
 var wave_count: int = 0
 
-var gold: float = 100
+@export var initial_gold: float = 100
+@onready var gold: float = initial_gold
 
 signal currency_changed(currency: String, value: Variant)
 
@@ -98,8 +100,9 @@ func level_end(victory: bool) -> void:
 func add_notification(message: String, duration: float = 10) -> void:
 	if not is_instance_valid(gui):
 		return
-	var n := gui.add_notification(message, duration)
-	await n.tree_exited
+	var n: PanelContainer = gui.add_notification(message, duration)
+	if is_instance_valid(n):
+		await n.tree_exited
 
 func add_wave_notification() -> void:
 	var message: String = "Wave %s of %s" % [wave + 1, wave_count]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq7op0wky50qe"]
+[gd_scene load_steps=12 format=3 uid="uid://bq7op0wky50qe"]
 
 [ext_resource type="Script" path="res://src/level/level.gd" id="1_3vw4e"]
+[ext_resource type="PackedScene" uid="uid://bsok1wefg8rfp" path="res://src/gui.tscn" id="2_aw1x5"]
 [ext_resource type="Script" path="res://src/level/level_camera.gd" id="2_gg4ir"]
 [ext_resource type="TileSet" uid="uid://b470o175hk36h" path="res://res/level_tileset.tres" id="2_wtbk8"]
 [ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/level/building/attackable_building.tscn" id="3_lc16i"]
@@ -8,7 +9,7 @@
 [ext_resource type="Script" path="res://src/level/troop/spawner_wave.gd" id="6_hnd3h"]
 [ext_resource type="PackedScene" uid="uid://q3f8kcw2mqms" path="res://src/level/troop/enemy.tscn" id="7_ytqdh"]
 
-[sub_resource type="Resource" id="Resource_mme6x"]
+[sub_resource type="Resource" id="Resource_uv6ah"]
 script = ExtResource("6_hnd3h")
 troops = Array[PackedScene]([ExtResource("7_ytqdh")])
 quantity = Array[int]([5])
@@ -19,18 +20,19 @@ script = ExtResource("6_hnd3h")
 troops = Array[PackedScene]([ExtResource("7_ytqdh")])
 quantity = Array[int]([5])
 frequency = 1.0
-next_wave = SubResource("Resource_mme6x")
+next_wave = SubResource("Resource_uv6ah")
 
 [sub_resource type="Resource" id="Resource_w74xx"]
 script = ExtResource("6_hnd3h")
 troops = Array[PackedScene]([])
 quantity = Array[int]([])
 frequency = 1.0
-next_wave = SubResource("Resource_mme6x")
+next_wave = SubResource("Resource_uv6ah")
 
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_3vw4e")
+gui_scene = ExtResource("2_aw1x5")
 _heart_building = NodePath("Buildings/AttackableBuilding")
 _camera = NodePath("LevelCamera")
 

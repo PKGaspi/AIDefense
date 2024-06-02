@@ -12,6 +12,7 @@ func setup(level: Level) -> void:
 	hear_building.damage_taken.connect(update_hp_bar)
 	setup_hp_bar(hear_building.hp)
 	level.currency_changed.connect(_on_level_currency_change)
+	_on_level_currency_change('gold', level.gold)
 
 func setup_hp_bar(max_value: float, value: float = max_value) -> void:
 	hp_bar.max_value = max_value

@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://je3ujydormnc"]
+
+[ext_resource type="PackedScene" uid="uid://bsok1wefg8rfp" path="res://src/gui.tscn" id="1_c2ao4"]
+[ext_resource type="Texture2D" uid="uid://dypwgh2g5gxj3" path="res://assets/arrow.png" id="2_kyoqt"]
+[ext_resource type="Texture2D" uid="uid://dmgho15p0ta0r" path="res://assets/arrow_left.png" id="3_m5i0l"]
+[ext_resource type="Script" path="res://src/gui/notifications_panel_tutorial.gd" id="4_sefui"]
+[ext_resource type="PackedScene" uid="uid://cbk4ac0b3wfhr" path="res://src/gui/title_menu.tscn" id="5_mx34e"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_aes4l"]
+allow_unpress = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8lx7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wanvs"]
+
+[node name="GUITutorial" instance=ExtResource("1_c2ao4")]
+shop_button_group = SubResource("ButtonGroup_aes4l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/LeftPanel/HBoxContainer" index="1"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/LeftPanel/HBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8lx7v")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/LeftPanel/HBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_kyoqt")
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/LeftPanel/HBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 48
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8lx7v")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/LeftPanel/HBoxContainer/HBoxContainer" index="3"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_kyoqt")
+
+[node name="Label2" type="Label" parent="HBoxContainer/LeftPanel/HBoxContainer" index="2"]
+layout_mode = 2
+text = "Select Weapon"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/LeftPanel/HBoxContainer" index="3"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 250
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wanvs")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/LeftPanel/HBoxContainer" index="4"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/LeftPanel/HBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 180
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8lx7v")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/LeftPanel/HBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_m5i0l")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/LeftPanel/HBoxContainer/HBoxContainer2" index="2"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "build"
+horizontal_alignment = 2
+
+[node name="HPBar" parent="HBoxContainer/CenterPanel" index="0"]
+visible = false
+
+[node name="TitleMenu" parent="HBoxContainer/CenterPanel" index="2" instance=ExtResource("5_mx34e")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="NotificationsPannel" parent="HBoxContainer/RightPanel" index="0"]
+visible = false
+script = ExtResource("4_sefui")

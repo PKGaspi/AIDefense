@@ -18,4 +18,4 @@ func setup() -> void:
 		vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
 
 func setup_label() -> void:
-	text = '$%s' % [shop_item.cost]
+	text = 'G%s' % [shop_item.cost]
