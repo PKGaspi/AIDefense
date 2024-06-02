@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bq7op0wky50qe"]
+[gd_scene load_steps=35 format=3 uid="uid://bq7op0wky50qe"]
 
 [ext_resource type="Script" path="res://src/level/level.gd" id="1_3vw4e"]
 [ext_resource type="PackedScene" uid="uid://bsok1wefg8rfp" path="res://src/gui/gui.tscn" id="2_cjaoi"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bfi5rtfadw5cy" path="res://src/level/victory_level.tscn" id="3_h546w"]
 [ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/level/building/attackable_building.tscn" id="3_lc16i"]
 [ext_resource type="PackedScene" uid="uid://wysevcu7btef" path="res://src/level/troop/troop_spawner.tscn" id="4_1cayl"]
+[ext_resource type="PackedScene" uid="uid://j66wcsua4qi3" path="res://src/level/game_over_level.tscn" id="4_4mwru"]
 [ext_resource type="Script" path="res://src/level/troop/spawner_wave.gd" id="6_hnd3h"]
 [ext_resource type="PackedScene" uid="uid://q3f8kcw2mqms" path="res://src/level/troop/enemy.tscn" id="7_ytqdh"]
 [ext_resource type="PackedScene" uid="uid://d23sbig0cworh" path="res://src/level/troop/enemy_car.tscn" id="9_iico5"]
@@ -170,6 +171,7 @@ y_sort_enabled = true
 script = ExtResource("1_3vw4e")
 gui_scene = ExtResource("2_cjaoi")
 next_level = ExtResource("3_h546w")
+game_over_scene = ExtResource("4_4mwru")
 _heart_building = NodePath("Buildings/AttackableBuilding")
 _camera = NodePath("LevelCamera")
 

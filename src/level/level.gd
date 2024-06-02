@@ -4,7 +4,7 @@ extends Node2D
 @export var gui_scene: PackedScene 
 var gui: GUI
 @export var next_level: PackedScene
-#@export var game_over_scene: PackedScene
+@export var game_over_scene: PackedScene
 
 
 @onready var projectile_layer: Node2D = %Projectiles
@@ -111,7 +111,7 @@ func level_end(victory: bool) -> void:
 		level = next_level
 	else:
 		message = "Oh no!\nToo bad!"
-		level = null
+		level = game_over_scene
 	await add_notification(message, 6)
 	Global.game_manager.set_level(level)
 
