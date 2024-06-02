@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://hm4sbnf4jwbg"]
+[gd_scene load_steps=5 format=3 uid="uid://bk65ly5gxvaro"]
 
 [ext_resource type="PackedScene" uid="uid://bsok1wefg8rfp" path="res://src/gui/gui.tscn" id="1_xiwf6"]
-[ext_resource type="PackedScene" uid="uid://cbk4ac0b3wfhr" path="res://src/gui/title_menu.tscn" id="2_y1vra"]
+[ext_resource type="PackedScene" uid="uid://btm7ww2kd0oho" path="res://src/gui/title_menu.tscn" id="2_y1vra"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_j6avf"]
 allow_unpress = true
