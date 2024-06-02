@@ -3,7 +3,7 @@ extends Node2D
 
 @export var gui_scene: PackedScene 
 var gui: GUI
-#@export var next_level: PackedScene
+@export var next_level: PackedScene
 #@export var game_over_scene: PackedScene
 
 
@@ -30,15 +30,18 @@ signal currency_changed(currency: String, value: Variant)
 
 func _ready() -> void:
 	heart_building = get_node(_heart_building)
+	heart_building.destroyed.connect(level_end.bind(false))
 	camera = get_node(_camera)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('debug_win'):
 		level_end(true)
+	elif event.is_action_pressed('debug_lose'):
+		if is_instance_valid(heart_building):
+			heart_building.die()
 
 func start() -> void:
 	await add_notification("Level Start!", 3)
-	heart_building.destroyed.connect(level_end.bind(false))
 	setup_spawners()
 	add_wave_notification()
 
@@ -105,10 +108,10 @@ func level_end(victory: bool) -> void:
 	var level: PackedScene
 	if victory:
 		message = "Congratulations!\nYou won!"
-#		level = next_level
+		level = next_level
 	else:
 		message = "Oh no!\nToo bad!"
-#		level = game_over_scene
+		level = null
 	await add_notification(message, 6)
 	Global.game_manager.set_level(level)
 

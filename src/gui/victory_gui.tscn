@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk65ly5gxvaro"]
+[gd_scene load_steps=4 format=3 uid="uid://bk65ly5gxvaro"]
 
 [ext_resource type="PackedScene" uid="uid://bsok1wefg8rfp" path="res://src/gui/gui.tscn" id="1_xiwf6"]
-[ext_resource type="PackedScene" uid="uid://btm7ww2kd0oho" path="res://src/gui/title_menu.tscn" id="2_y1vra"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_j6avf"]
 allow_unpress = true
@@ -41,7 +40,3 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 20
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ys7pf")
-
-[node name="TitleMenu" parent="HBoxContainer/CenterPanel/Control" index="2" instance=ExtResource("2_y1vra")]
-layout_mode = 2
-size_flags_vertical = 4

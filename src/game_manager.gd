@@ -12,6 +12,8 @@ func _ready() -> void:
 		set_level(init_level_scene)
 
 func set_level(value: PackedScene) -> void:
+	if not is_instance_valid(value):
+		return
 	if is_instance_valid(level):
 		level.queue_free()
 	level = value.instantiate() as Level

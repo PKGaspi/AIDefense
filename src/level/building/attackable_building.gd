@@ -13,4 +13,5 @@ func get_hit(damage: float) -> void:
 		die()
 
 func die() -> void:
+	destroyed.emit()
 	queue_free()

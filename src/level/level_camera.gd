@@ -6,7 +6,8 @@ extends Camera2D
 var mouse_start_pos
 var screen_start_position
 
-var dragging = false
+var dragging: bool = false
+var dragged: bool = false
 
 var ZOOM_STEP: Vector2 = Vector2(.4, .4)
 var ZOOM_MAX: Vector2 = Vector2(5, 5)
@@ -25,8 +26,12 @@ func _input(event) -> void:
 			dragging = true
 		else:
 			dragging = false
+			if dragged:
+				get_tree().root.set_input_as_handled()
+				dragged = false
 	elif event is InputEventMouseMotion and dragging:
 		position = (mouse_start_pos - event.position) / zoom + screen_start_position
+		dragged = true
 	elif not dragging and event.is_action_pressed("zoom_in"):
 		zoom_at_mouse(zoom + ZOOM_STEP)
 	elif not dragging and event.is_action_pressed("zoom_out"):
