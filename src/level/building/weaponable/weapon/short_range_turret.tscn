@@ -12,7 +12,7 @@ radius = 20.0
 z_index = 1
 script = ExtResource("1_j13js")
 n_targets = 1
-reload_time = 0.2
+reload_time = 0.4
 projectile = ExtResource("2_1n0ce")
 projectile_stats = ExtResource("3_86mx5")
 

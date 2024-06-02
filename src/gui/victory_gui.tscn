@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://hm4sbnf4jwbg"]
+
+[ext_resource type="PackedScene" uid="uid://bsok1wefg8rfp" path="res://src/gui/gui.tscn" id="1_xiwf6"]
+[ext_resource type="PackedScene" uid="uid://cbk4ac0b3wfhr" path="res://src/gui/title_menu.tscn" id="2_y1vra"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_j6avf"]
+allow_unpress = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ys7pf"]
+
+[node name="GUI" instance=ExtResource("1_xiwf6")]
+shop_button_group = SubResource("ButtonGroup_j6avf")
+
+[node name="HBoxContainer" parent="HBoxContainer/LeftPanel" index="0"]
+visible = false
+
+[node name="BuildingButtonPanel" parent="HBoxContainer/LeftPanel/HBoxContainer" index="0"]
+visible = false
+
+[node name="HPBar" parent="HBoxContainer/CenterPanel" index="0"]
+visible = false
+
+[node name="GoldLabel" parent="HBoxContainer/CenterPanel" index="1"]
+visible = false
+
+[node name="Control" type="VBoxContainer" parent="HBoxContainer/CenterPanel" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Victory label" type="Label" parent="HBoxContainer/CenterPanel/Control" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Thank you
+ for playing!"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="HSeparator" parent="HBoxContainer/CenterPanel/Control" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ys7pf")
+
+[node name="TitleMenu" parent="HBoxContainer/CenterPanel/Control" index="2" instance=ExtResource("2_y1vra")]
+layout_mode = 2
+size_flags_vertical = 4

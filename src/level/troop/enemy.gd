@@ -18,7 +18,8 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if is_attacking():
 		return # Don't move and attack
-	var direction = global_position.direction_to(navigation_agent.get_next_path_position())
+	var target_pos := navigation_agent.get_next_path_position()
+	var direction = global_position.direction_to(target_pos)
 	velocity = direction * stats.speed * delta
 	move_and_slide()
 

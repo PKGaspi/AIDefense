@@ -1,7 +1,7 @@
 extends Node
 
 var currency: String = "gold"
-var rate: float = 2.3
+@export var rate: float = 2.3
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -3,6 +3,9 @@ extends Node2D
 
 @export var gui_scene: PackedScene 
 var gui: GUI
+@export var next_level: PackedScene
+@export var game_over_scene: PackedScene
+
 
 @onready var projectile_layer: Node2D = %Projectiles
 @onready var building_layer: Node2D = %Buildings
@@ -29,6 +32,10 @@ func _ready() -> void:
 	heart_building = get_node(_heart_building)
 	camera = get_node(_camera)
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed('debug_win'):
+		level_end(true)
+
 func start() -> void:
 	await add_notification("Level Start!", 3)
 	heart_building.tree_exited.connect(level_end.bind(false))
@@ -51,6 +58,8 @@ func next_wave() -> void:
 		return
 	finished_waves = 0
 	wave += 1
+	if wave >= wave_count:
+		return
 	for spawner in spawner_layer.get_children():
 		spawner.next_wave()
 	add_wave_notification()
@@ -92,10 +101,16 @@ func _on_spawner_finished() -> void:
 		level_end(true)
 
 func level_end(victory: bool) -> void:
+	var message: String
+	var level: PackedScene
 	if victory:
-		print("Congratulations! You won!")
+		message = "Congratulations!\nYou won!"
+		level = next_level
 	else:
-		print("Oh no, too bad!")
+		message = "Oh no!\nToo bad!"
+		level = game_over_scene
+	await add_notification(message, 6)
+	Global.game_manager.set_level(level)
 
 func add_notification(message: String, duration: float = 10) -> void:
 	if not is_instance_valid(gui):

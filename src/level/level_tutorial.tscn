@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://df06kjs51r7gd"]
 
 [ext_resource type="PackedScene" uid="uid://dxydxr7qujrkj" path="res://src/level/level_base.tscn" id="1_tphma"]
-[ext_resource type="PackedScene" uid="uid://je3ujydormnc" path="res://src/level/gui_tutorial.tscn" id="2_ncuis"]
+[ext_resource type="PackedScene" uid="uid://je3ujydormnc" path="res://src/gui/gui_tutorial.tscn" id="2_ncuis"]
 [ext_resource type="PackedScene" uid="uid://wysevcu7btef" path="res://src/level/troop/troop_spawner.tscn" id="3_xvabc"]
 [ext_resource type="Script" path="res://src/level/troop/spawner_wave.gd" id="4_teqxe"]
 [ext_resource type="PackedScene" uid="uid://q3f8kcw2mqms" path="res://src/level/troop/enemy.tscn" id="5_2x0np"]

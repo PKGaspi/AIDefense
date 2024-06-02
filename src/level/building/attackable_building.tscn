@@ -81,3 +81,4 @@ visible = false
 
 [node name="CurrencyGenerator" type="Node" parent="." index="3"]
 script = ExtResource("3_vu4v4")
+rate = 0.0

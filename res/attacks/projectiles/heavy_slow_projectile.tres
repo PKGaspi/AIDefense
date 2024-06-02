@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_dsyax")
 damage = 550.0
-speed = 120.0
+speed = 75.0

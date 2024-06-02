@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxydxr7qujrkj"]
+[gd_scene load_steps=7 format=3 uid="uid://dxydxr7qujrkj"]
 
 [ext_resource type="Script" path="res://src/level/level.gd" id="1_88cvu"]
+[ext_resource type="PackedScene" uid="uid://bsok1wefg8rfp" path="res://src/gui/gui.tscn" id="2_fttvp"]
 [ext_resource type="TileSet" uid="uid://b470o175hk36h" path="res://res/level_tileset.tres" id="2_k8r6k"]
-[ext_resource type="PackedScene" uid="uid://bsok1wefg8rfp" path="res://src/gui.tscn" id="2_mok7m"]
+[ext_resource type="PackedScene" uid="uid://df06kjs51r7gd" path="res://src/level/level_tutorial.tscn" id="3_8ivcy"]
 [ext_resource type="Script" path="res://src/level/level_camera.gd" id="3_rnqni"]
 [ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/level/building/attackable_building.tscn" id="4_n0ycq"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_88cvu")
-gui_scene = ExtResource("2_mok7m")
+gui_scene = ExtResource("2_fttvp")
+game_over_scene = ExtResource("3_8ivcy")
 _heart_building = NodePath("Buildings/AttackableBuilding")
 _camera = NodePath("LevelCamera")
 

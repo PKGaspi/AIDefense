@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bsok1wefg8rfp"]
 
-[ext_resource type="Script" path="res://src/gui.gd" id="1_7ouo7"]
+[ext_resource type="Script" path="res://src/gui/gui.gd" id="1_7ouo7"]
 [ext_resource type="Theme" uid="uid://b5ugdhpuiqm0p" path="res://res/gui/theme.tres" id="1_yr85b"]
 [ext_resource type="ButtonGroup" uid="uid://dyvv7jplyr6rj" path="res://res/gui/shop_button_group.tres" id="2_3wyct"]
 [ext_resource type="Script" path="res://src/shop.gd" id="3_n1agj"]
-[ext_resource type="Script" path="res://src/notifications_panel.gd" id="4_3oisu"]
+[ext_resource type="Script" path="res://src/gui/notifications_panel.gd" id="4_3oisu"]
 
 [node name="GUI" type="MarginContainer"]
 anchors_preset = 15

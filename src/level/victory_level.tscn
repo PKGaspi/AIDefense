@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfi5rtfadw5cy"]
+
+[ext_resource type="PackedScene" uid="uid://dxydxr7qujrkj" path="res://src/level/level_base.tscn" id="1_f7l6v"]
+[ext_resource type="PackedScene" uid="uid://hm4sbnf4jwbg" path="res://src/gui/victory_gui.tscn" id="2_71a6r"]
+[ext_resource type="PackedScene" uid="uid://bbcwvgddtyaao" path="res://src/level/building/attackable_building.tscn" id="3_5uhks"]
+
+[node name="Level" instance=ExtResource("1_f7l6v")]
+gui_scene = ExtResource("2_71a6r")
+
+[node name="AttackableBuilding" parent="Buildings" index="0"]
+position = Vector2(112, 128)
+
+[node name="AttackableBuilding2" parent="Buildings" index="1" instance=ExtResource("3_5uhks")]
+position = Vector2(352, 88)
+collision_layer = 2
+collision_mask = 1
+
+[node name="AttackableBuilding5" parent="Buildings" index="2" instance=ExtResource("3_5uhks")]
+position = Vector2(168, 168)
+collision_layer = 2
+collision_mask = 1
+
+[node name="AttackableBuilding6" parent="Buildings" index="3" instance=ExtResource("3_5uhks")]
+position = Vector2(272, 32)
+collision_layer = 2
+collision_mask = 1
+
+[node name="AttackableBuilding7" parent="Buildings" index="4" instance=ExtResource("3_5uhks")]
+position = Vector2(168, 40)
+collision_layer = 2
+collision_mask = 1
+
+[node name="AttackableBuilding8" parent="Buildings" index="5" instance=ExtResource("3_5uhks")]
+position = Vector2(424, 176)
+collision_layer = 2
+collision_mask = 1
+
+[node name="AttackableBuilding9" parent="Buildings" index="6" instance=ExtResource("3_5uhks")]
+position = Vector2(440, 48)
+collision_layer = 2
+collision_mask = 1
+
+[node name="AttackableBuilding10" parent="Buildings" index="7" instance=ExtResource("3_5uhks")]
+position = Vector2(56, 176)
+collision_layer = 2
+collision_mask = 1
+
+[node name="AttackableBuilding11" parent="Buildings" index="8" instance=ExtResource("3_5uhks")]
+position = Vector2(56, 32)
+collision_layer = 2
+collision_mask = 1
+
+[node name="AttackableBuilding3" parent="Buildings" index="9" instance=ExtResource("3_5uhks")]
+position = Vector2(328, 168)
+collision_layer = 2
+collision_mask = 1
+
+[node name="AttackableBuilding4" parent="Buildings" index="10" instance=ExtResource("3_5uhks")]
+position = Vector2(96, 88)
+collision_layer = 2
+collision_mask = 1
