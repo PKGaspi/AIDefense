@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmehjiokgqddv"]
+
+[ext_resource type="PackedScene" uid="uid://cmeilvkyf26t8" path="res://src/level/building/weaponable/weapon/short_range_turret.tscn" id="1_hatyt"]
+
+[node name="Turret" instance=ExtResource("1_hatyt")]
+n_targets = 3
+reload_time = 3.0

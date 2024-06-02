@@ -62,6 +62,7 @@ func next_wave() -> void:
 	finished_waves = 0
 	wave += 1
 	if wave >= wave_count:
+		level_end(true)
 		return
 	for spawner in spawner_layer.get_children():
 		spawner.next_wave()
@@ -100,8 +101,6 @@ func _on_spawner_wave_finished() -> void:
 
 func _on_spawner_finished() -> void:
 	finished_spawners += 1
-	if finished_spawners >= spawner_count:
-		level_end(true)
 
 func level_end(victory: bool) -> void:
 	var message: String
@@ -116,6 +115,8 @@ func level_end(victory: bool) -> void:
 	Global.game_manager.set_level(level)
 
 func add_notification(message: String, duration: float = 10) -> void:
+	if wave_count == 0:
+		return
 	if not is_instance_valid(gui):
 		return
 	var n: PanelContainer = gui.add_notification(message, duration)

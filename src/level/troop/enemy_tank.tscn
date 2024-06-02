@@ -8,8 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_fcry1"]
 script = ExtResource("2_gnof6")
-max_hp = 22000.0
-speed = 15.0
+max_hp = 19000.0
+speed = 12.0
 gold_drop = 55.0
 
 [sub_resource type="Resource" id="Resource_ywgj1"]
