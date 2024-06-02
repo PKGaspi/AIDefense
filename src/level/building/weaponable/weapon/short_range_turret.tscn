@@ -6,13 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://cepphbcq6axp5" path="res://assets/turret.png" id="3_xn52k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ps82p"]
-radius = 20.0
+radius = 22.0
 
 [node name="Turret" type="Area2D"]
 z_index = 1
 script = ExtResource("1_j13js")
 n_targets = 1
-reload_time = 0.4
 projectile = ExtResource("2_1n0ce")
 projectile_stats = ExtResource("3_86mx5")
 

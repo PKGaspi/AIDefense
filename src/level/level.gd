@@ -99,8 +99,8 @@ func _on_spawner_wave_finished() -> void:
 		next_wave()
 
 func _on_spawner_finished() -> void:
-	spawner_count -= 1
-	if spawner_count <= 0:
+	finished_spawners += 1
+	if finished_spawners >= spawner_count:
 		level_end(true)
 
 func level_end(victory: bool) -> void:
