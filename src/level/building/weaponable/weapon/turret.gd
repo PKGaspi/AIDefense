@@ -14,6 +14,12 @@ var targets_in_range: Array[Node2D]
 @export var projectile: PackedScene
 @export var projectile_stats: ProjectileStats
 
+@export var snd_place: AudioStream
+var snd_player_place: AudioStreamPlayer2D
+@export var snd_shoot: AudioStream
+var snd_player_shoot: AudioStreamPlayer2D
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	reload_timer = Timer.new()
@@ -24,6 +30,18 @@ func _ready() -> void:
 	add_child(reload_timer)
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	
+	snd_player_place = setup_sound(snd_place)
+	snd_player_place.play()
+	snd_player_shoot = setup_sound(snd_shoot, 'Shooting')
+
+func setup_sound(snd: AudioStream, bus: String = 'Master') -> AudioStreamPlayer2D:
+	var node:= AudioStreamPlayer2D.new()
+	node.stream = snd
+	node.bus = bus
+	add_child(node)
+	return node
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -35,6 +53,7 @@ func can_shoot() -> bool:
 
 func shoot() -> void:
 	reload_timer.start()
+	var shooted: bool = false
 	for target in targets:
 		var p: Area2D = projectile.instantiate()
 		p.stats = projectile_stats
@@ -42,6 +61,9 @@ func shoot() -> void:
 		p.global_position = global_position
 		p.collision_mask = collision_mask
 		Global.game_manager.level.projectile_layer.add_child(p)
+		shooted = true
+	if shooted:
+		snd_player_shoot.play()
 
 func remove_target(target: Node2D) -> void:
 	if target in targets_in_range:

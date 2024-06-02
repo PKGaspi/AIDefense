@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmeilvkyf26t8"]
+[gd_scene load_steps=8 format=3 uid="uid://cmeilvkyf26t8"]
 
 [ext_resource type="Script" path="res://src/level/building/weaponable/weapon/turret.gd" id="1_j13js"]
 [ext_resource type="PackedScene" uid="uid://7u80dv8qn1j0" path="res://src/level/attacks/projectile.tscn" id="2_1n0ce"]
 [ext_resource type="Resource" uid="uid://dcgwaygdobbqb" path="res://res/attacks/projectiles/weak_agile_projectile.tres" id="3_86mx5"]
 [ext_resource type="Texture2D" uid="uid://cepphbcq6axp5" path="res://assets/turret.png" id="3_xn52k"]
+[ext_resource type="AudioStream" uid="uid://c8csbo6vij10i" path="res://assets/audio/tone1.ogg" id="4_xlqm2"]
+[ext_resource type="AudioStream" uid="uid://dr77qlovbql35" path="res://assets/audio/laserSmall_000.ogg" id="5_b37m0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ps82p"]
 radius = 22.0
@@ -14,6 +16,8 @@ script = ExtResource("1_j13js")
 n_targets = 1
 projectile = ExtResource("2_1n0ce")
 projectile_stats = ExtResource("3_86mx5")
+snd_place = ExtResource("4_xlqm2")
+snd_shoot = ExtResource("5_b37m0")
 
 [node name="Range" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
