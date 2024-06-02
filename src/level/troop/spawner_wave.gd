@@ -16,7 +16,7 @@ func _init() -> void:
 func next_troop() -> PackedScene:
 	if index >= len(troops):
 		return null
-	if count > quantity[index]:
+	if count >= quantity[index]:
 		count = 0
 		index += 1
 		return next_troop()

@@ -19,8 +19,12 @@ func _physics_process(delta):
 	if is_attacking():
 		return # Don't move and attack
 	var target_pos := navigation_agent.get_next_path_position()
+	var distance_to_target := global_position.distance_to(target_pos)
+	if distance_to_target < stats.speed * delta:
+		global_position = target_pos
+		return
 	var direction = global_position.direction_to(target_pos)
-	velocity = direction * stats.speed * delta
+	velocity = direction * stats.speed
 	move_and_slide()
 
 func new_target() -> void:

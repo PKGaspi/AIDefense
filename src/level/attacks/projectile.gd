@@ -15,7 +15,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction = global_position.direction_to(target.global_position).normalized()
 	global_rotation = direction.angle()
-	global_position += direction * stats.speed * delta
+	global_position += direction * stats.speed
 	
 func hit(body: Node2D) -> void:
 	if body.has_method('get_hit'):

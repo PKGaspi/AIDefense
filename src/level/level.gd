@@ -95,7 +95,7 @@ func get_selected_shop_item() -> ShopItem:
 
 func _on_spawner_wave_finished() -> void:
 	finished_waves += 1
-	if finished_waves >= spawner_count:
+	if finished_waves + finished_spawners >= spawner_count:
 		next_wave()
 
 func _on_spawner_finished() -> void:

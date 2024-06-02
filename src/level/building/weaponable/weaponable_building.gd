@@ -47,6 +47,6 @@ func build() -> bool:
 	weapon.global_position -= size * tileset_cell_size
 	weapon.global_position += weapon_size
 	level.building_layer.add_child(weapon)
-	modulate = selected_modulate
+	#modulate = selected_modulate
 	set_selected(true)
 	return true
