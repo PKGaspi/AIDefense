@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Last AI Standing"
+config/name="AI Defend"
 run/main_scene="res://src/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/turret.png"
 
 [audio]
 
@@ -73,4 +73,5 @@ debug_lose={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.0392157, 0.129412, 0.270588, 1)
