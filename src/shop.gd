@@ -30,5 +30,3 @@ func create_shop_button_from_file(res_path: String) -> void:
 	if not is_instance_valid(shop_item):
 		return
 	add_child(shop_item.create_shop_button())
-
-

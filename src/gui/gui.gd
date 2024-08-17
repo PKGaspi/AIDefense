@@ -7,6 +7,10 @@ extends MarginContainer
 @onready var notifications_panel: NotificationsPanel = %NotificationsPannel
 @export var shop_button_group: ButtonGroup
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed('debug_ui_toggle'):
+		visible = not visible
+
 func setup(level: Level) -> void:
 	var hear_building = level.heart_building
 	hear_building.damage_taken.connect(update_hp_bar)

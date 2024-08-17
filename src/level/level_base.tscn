@@ -21,7 +21,6 @@ layer_0/name = "Roads"
 layer_1/name = "Buildings"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array()
 
 [node name="LevelCamera" type="Camera2D" parent="."]
 limit_left = 0
